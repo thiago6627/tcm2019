@@ -1,0 +1,218 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Karla&display=swap');
+@font-face {
+	font-family:"Gotham Book";
+	src:url('GothamHTF-Book.ttf');
+}
+.titulo {
+	font-family: 'Work Sans', sans-serif;
+	font-size:4vw;
+	color:white;
+	margin-left:13%;
+	margin-bottom:0;
+}
+.titulo2 {
+	font-family: 'Work Sans', sans-serif;
+	font-size:2.5vw;
+	color:black;
+	margin-left:10%;
+	margin-bottom:0;
+}
+.sinopse {
+	font-family: 'Karla', sans-serif;
+	font-size:1.5vw;
+	padding-left:18%;
+	text-align:justify;
+	color:white;
+	margin-right:13%;
+}
+.sinopse-grande {
+	font-family: 'Gotham Book', sans-serif;
+	font-size:4vw;
+	padding-left:18%;
+	text-align:center;
+	color:white;
+	margin-right:13%;
+	text-transform:uppercase;
+	cursor:default;
+}
+.desc-serv {
+	font-family: 'Karla', sans-serif;
+	font-size:1.5vw;
+	padding-left:18%;
+	text-align:justify;
+	color:black;
+	margin-right:13%;
+}
+body#home {
+	background-image: url("background.jpeg");
+	background-repeat: no-repeat;
+	margin:0;
+	padding:0;
+}
+body#servicos {
+	background-image: url("background-cortado2.jpg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin:0;
+	padding:0;
+}
+body#empresa {
+	background-image:url("background6.jpg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin:0;
+	padding:0;
+}
+/* BARRA DE CABEÇALHO */
+header {
+	width:100%;
+	height:100px;
+	background-color:rgba(20,20,20,0);
+}
+header ul {
+	position:absolute;
+	right:4%;
+}
+header li {
+	color:white;
+	list-style:none;
+	display:inline-block;
+	font-family:'Josefin Sans', sans-serif;
+	font-size:1.3vw;
+	margin-right:1vw;
+	border-bottom: 0.15vw solid white;
+	border-color:rgb(237,20,91)
+}
+header li p {
+	transform: translateY(1vw);
+	transition: transform 0.3s;
+	cursor:default;
+}
+header li:hover p {
+	transform: translateY(0px);
+	color:rgb(237,20,91);
+}
+header li a {
+	text-decoration:none;
+	color:white;
+}
+header li:hover a {
+	padding-bottom:15px;
+	color:rgb(237,20,91);
+}
+header div#sinopse {
+	position:absolute;
+	margin-top:12%;
+	width:100%;
+}
+img#logo {
+	position:absolute;
+	margin-left:3.6vw;
+	margin-top:1.5vw;
+	width:5.5vw;
+	height:5.7vw;
+}
+
+/* PÁGINA HOME */
+section#home span {
+	position:absolute;
+	font-family: 'Karla', sans-serif;
+	font-size:1.3vw;
+	margin-left:19%;
+	margin-top:-3%;
+	color:white;
+	cursor:default;
+}
+section#home {
+	margin: auto;
+	margin-top:10%;
+	width:100%;
+}
+a#botao {
+	position:absolute;
+	margin-left:18%;
+	margin-top:1%;
+	text-decoration:none;
+	color:rgb(237,20,91);
+	font-family: 'Work Sans', sans-serif;
+	font-size:1.1vw;
+	border: 1px solid rgb(237,20,91);
+	padding:1vw;
+	transition: background-color 0.3s, color 0.3s
+}
+a#botao:hover {
+	background-color: rgb(237,20,91);
+	color:white;
+}
+#hr-home {
+	width:4%;
+	position:absolute;
+	margin-left:13%;
+	margin-top:-2.4%;
+	border-color:rgb(237,20,91)
+}
+
+/* PÁGINA SERVIÇOS */
+header span {
+	position:absolute;
+	font-family: 'Karla', sans-serif;
+	font-size:1.3vw;
+	margin-left:19%;
+	margin-top:0.4%;
+	color:white;
+	cursor:default;
+}
+#hr-serv {
+	margin-top:1%;
+	width:4%;
+	position:absolute;
+	margin-left:13%;
+	border-color:rgb(237,20,91)
+}
+section#servicos {
+	margin: auto;
+	margin-top:35%;
+	width:100%;
+}
+div#sinopseServ {
+	position:absolute;
+	top:13vw;
+}
+
+/* PÁGINA EMPRESA */
+section#empresa {
+	margin:auto;
+	margin-top:30%;
+	background-color:green;
+}
+/* RODAPÉ */
+footer {
+	width:100%;
+	height:13%;
+	position:absolute;
+	top:100%;
+	background-color:black;
+	border-top:0.5px solid rgba(237,20,91,0.7);
+	background-image:url("logo.png");
+	background-repeat:no-repeat;
+	background-size:4vw;
+	background-position:2% 1vh;
+}
+footer p {
+	color:rgb(160,160,160);
+	font-family: 'Karla', sans-serif;
+	text-align:left;
+	display:inline-block;
+	margin-left:7vw;
+	margin-top:2.3%;
+	font-size:1.2vw;
+	cursor:default;
+}
+/*@media (max-width:1000px){
+	hr, span {
+		display:none;
+	}		
+}*/
