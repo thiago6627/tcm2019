@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\Agendamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Agendamento.Designer.cs">
+      <DependentUpon>Agendamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TelaLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Agendamento.resx">
+      <DependentUpon>Agendamento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>

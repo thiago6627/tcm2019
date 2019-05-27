@@ -110,5 +110,15 @@ namespace Sistema_Clínica_de_Estética
         {
             Application.Run(new MenuPrincipal());
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
