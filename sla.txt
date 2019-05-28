@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Data.SqlClient;
+
+namespace teste
+{
+    public partial class Form1 : Form
+    {
+        // Declarando a String de conexão
+        SqlConnection con = new SqlConnection("Data Source=localhost; Initial Catalog=bdaula; Integrated Security=true");
+        SqlCommand comando = new SqlCommand();
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            comando.CommandText = "INSERT INTO usuario (codigo, nome) values ('" + textBox1.Text + "','" + textBox2.Text + "')";
+        }
+    }
+}
