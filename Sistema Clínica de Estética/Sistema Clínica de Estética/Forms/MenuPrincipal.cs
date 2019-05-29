@@ -26,7 +26,7 @@ namespace Sistema_Clínica_de_Estética
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-            nt = new Thread(novoform);
+            Thread nt = new Thread(novoform);
             nt.SetApartmentState(ApartmentState.STA);
             nt.Start();
         }
@@ -34,6 +34,18 @@ namespace Sistema_Clínica_de_Estética
         private void novoform()
         {
             Application.Run(new Forms.Agendamento());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Thread ff = new Thread(formFuncionario);
+            ff.Start();
+        }
+
+        private void formFuncionario()
+        {
+            Application.Run(new Forms.Funcionario());
         }
     }
 }
