@@ -115,14 +115,14 @@
             this.textBox2.Location = new System.Drawing.Point(5, 24);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(293, 20);
-            this.textBox2.TabIndex = 10;
+            this.textBox2.TabIndex = 2;
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(6, 67);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(156, 20);
-            this.textBox3.TabIndex = 12;
+            this.textBox3.TabIndex = 3;
             // 
             // label3
             // 
@@ -139,7 +139,7 @@
             this.textBox4.Location = new System.Drawing.Point(6, 110);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(292, 20);
-            this.textBox4.TabIndex = 14;
+            this.textBox4.TabIndex = 5;
             // 
             // label4
             // 
@@ -209,7 +209,7 @@
             this.textBox5.Location = new System.Drawing.Point(168, 67);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(130, 20);
-            this.textBox5.TabIndex = 17;
+            this.textBox5.TabIndex = 4;
             // 
             // label5
             // 
@@ -349,7 +349,7 @@
             this.comboBox3.Location = new System.Drawing.Point(78, 51);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 24;
+            this.comboBox3.TabIndex = 1;
             this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // label10
@@ -374,7 +374,7 @@
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(166, 21);
             this.comboBox4.Sorted = true;
-            this.comboBox4.TabIndex = 27;
+            this.comboBox4.TabIndex = 24;
             this.comboBox4.Visible = false;
             // 
             // label11
@@ -393,7 +393,7 @@
             this.button1.Location = new System.Drawing.Point(878, 116);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 28;
+            this.button1.TabIndex = 25;
             this.button1.Text = "Agendar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
