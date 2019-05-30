@@ -30,20 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Agendamento));
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.maskedTextBox5 = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -59,8 +59,38 @@
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.maskedTextBox8 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox7 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox6 = new System.Windows.Forms.MaskedTextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.label21 = new System.Windows.Forms.Label();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.maskedTextBox9 = new System.Windows.Forms.MaskedTextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -69,20 +99,13 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.label1.Location = new System.Drawing.Point(3, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 17);
+            this.label1.Size = new System.Drawing.Size(29, 17);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Código do Cliente";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(123, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(94, 20);
-            this.textBox1.TabIndex = 6;
+            this.label1.Text = "CPF";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(223, 1);
+            this.button2.Location = new System.Drawing.Point(223, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 7;
@@ -91,14 +114,22 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.maskedTextBox5);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.textBox1);
             this.panel2.Location = new System.Drawing.Point(22, 75);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(303, 26);
             this.panel2.TabIndex = 8;
             this.panel2.Visible = false;
+            // 
+            // maskedTextBox5
+            // 
+            this.maskedTextBox5.Location = new System.Drawing.Point(38, 3);
+            this.maskedTextBox5.Mask = "000,000,000-00";
+            this.maskedTextBox5.Name = "maskedTextBox5";
+            this.maskedTextBox5.Size = new System.Drawing.Size(179, 20);
+            this.maskedTextBox5.TabIndex = 33;
             // 
             // label2
             // 
@@ -116,13 +147,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(293, 20);
             this.textBox2.TabIndex = 2;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(6, 67);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(156, 20);
-            this.textBox3.TabIndex = 3;
             // 
             // label3
             // 
@@ -154,15 +178,15 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.maskedTextBox2);
+            this.panel3.Controls.Add(this.maskedTextBox1);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.radioButton5);
             this.panel3.Controls.Add(this.radioButton4);
-            this.panel3.Controls.Add(this.textBox5);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.button3);
             this.panel3.Controls.Add(this.textBox4);
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.textBox3);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.textBox2);
             this.panel3.Controls.Add(this.label2);
@@ -171,6 +195,22 @@
             this.panel3.Size = new System.Drawing.Size(303, 206);
             this.panel3.TabIndex = 15;
             this.panel3.Visible = false;
+            // 
+            // maskedTextBox2
+            // 
+            this.maskedTextBox2.Location = new System.Drawing.Point(6, 67);
+            this.maskedTextBox2.Mask = "(00) 00000-0000";
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.Size = new System.Drawing.Size(156, 20);
+            this.maskedTextBox2.TabIndex = 3;
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(168, 67);
+            this.maskedTextBox1.Mask = "000,000,000-00";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(130, 20);
+            this.maskedTextBox1.TabIndex = 4;
             // 
             // label6
             // 
@@ -204,13 +244,6 @@
             this.radioButton4.Text = "Masculino";
             this.radioButton4.UseVisualStyleBackColor = true;
             // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(168, 67);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(130, 20);
-            this.textBox5.TabIndex = 4;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -229,6 +262,7 @@
             this.button3.TabIndex = 15;
             this.button3.Text = "Cadastrar";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // panel4
             // 
@@ -285,6 +319,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Tratamento Corporal",
@@ -293,22 +328,27 @@
             "Tratamentos Diversos"});
             this.comboBox1.Location = new System.Drawing.Point(488, 50);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(166, 21);
+            this.comboBox1.Size = new System.Drawing.Size(166, 25);
             this.comboBox1.TabIndex = 21;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(714, 50);
+            this.dateTimePicker1.Location = new System.Drawing.Point(714, 47);
+            this.dateTimePicker1.MinDate = new System.DateTime(2019, 5, 30, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(80, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(87, 25);
             this.dateTimePicker1.TabIndex = 22;
             // 
             // comboBox2
             // 
+            this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
+            "08:00",
+            "08:30",
             "09:00",
             "09:30",
             "10:00",
@@ -329,14 +369,10 @@
             "17:30",
             "18:00",
             "18:30",
-            "19:00",
-            "19:30",
-            "20:00",
-            "20:30",
-            "21:00"});
-            this.comboBox2.Location = new System.Drawing.Point(876, 49);
+            "19:00"});
+            this.comboBox2.Location = new System.Drawing.Point(876, 47);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(77, 21);
+            this.comboBox2.Size = new System.Drawing.Size(77, 25);
             this.comboBox2.Sorted = true;
             this.comboBox2.TabIndex = 23;
             // 
@@ -364,15 +400,16 @@
             // 
             // comboBox4
             // 
+            this.comboBox4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Items.AddRange(new object[] {
             "Tratamento Corporal",
             "Tratamento Especial",
             "Tratamento Facial",
             "Tratamentos Diversos"});
-            this.comboBox4.Location = new System.Drawing.Point(488, 75);
+            this.comboBox4.Location = new System.Drawing.Point(488, 84);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(166, 21);
+            this.comboBox4.Size = new System.Drawing.Size(166, 25);
             this.comboBox4.Sorted = true;
             this.comboBox4.TabIndex = 24;
             this.comboBox4.Visible = false;
@@ -381,7 +418,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(384, 75);
+            this.label11.Location = new System.Drawing.Point(383, 87);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(50, 17);
             this.label11.TabIndex = 26;
@@ -398,12 +435,305 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.Location = new System.Drawing.Point(536, 175);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(75, 21);
+            this.radioButton1.TabIndex = 27;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Dinheiro";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.Location = new System.Drawing.Point(628, 175);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(65, 21);
+            this.radioButton2.TabIndex = 28;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Cartão";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.maskedTextBox8);
+            this.panel1.Controls.Add(this.maskedTextBox7);
+            this.panel1.Controls.Add(this.maskedTextBox6);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Location = new System.Drawing.Point(387, 195);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(181, 91);
+            this.panel1.TabIndex = 29;
+            this.panel1.Visible = false;
+            // 
+            // maskedTextBox8
+            // 
+            this.maskedTextBox8.Location = new System.Drawing.Point(73, 64);
+            this.maskedTextBox8.Mask = "$ ";
+            this.maskedTextBox8.Name = "maskedTextBox8";
+            this.maskedTextBox8.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBox8.TabIndex = 34;
+            // 
+            // maskedTextBox7
+            // 
+            this.maskedTextBox7.Location = new System.Drawing.Point(73, 39);
+            this.maskedTextBox7.Mask = "$ ";
+            this.maskedTextBox7.Name = "maskedTextBox7";
+            this.maskedTextBox7.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBox7.TabIndex = 33;
+            // 
+            // maskedTextBox6
+            // 
+            this.maskedTextBox6.Location = new System.Drawing.Point(73, 13);
+            this.maskedTextBox6.Mask = "$ 99999";
+            this.maskedTextBox6.Name = "maskedTextBox6";
+            this.maskedTextBox6.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBox6.TabIndex = 32;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(26, 64);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(41, 17);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "Troco";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(4, 38);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(63, 17);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Recebido";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(29, 12);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(38, 17);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Valor";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(387, 175);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(135, 17);
+            this.label15.TabIndex = 30;
+            this.label15.Text = "Forma de pagamento";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(386, 148);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(78, 17);
+            this.label16.TabIndex = 31;
+            this.label16.Text = "Pagamento";
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.textBox1);
+            this.panel5.Controls.Add(this.label23);
+            this.panel5.Controls.Add(this.maskedTextBox9);
+            this.panel5.Controls.Add(this.comboBox5);
+            this.panel5.Controls.Add(this.label21);
+            this.panel5.Controls.Add(this.label22);
+            this.panel5.Controls.Add(this.maskedTextBox3);
+            this.panel5.Controls.Add(this.maskedTextBox4);
+            this.panel5.Controls.Add(this.textBox12);
+            this.panel5.Controls.Add(this.label20);
+            this.panel5.Controls.Add(this.label19);
+            this.panel5.Controls.Add(this.textBox11);
+            this.panel5.Controls.Add(this.label18);
+            this.panel5.Controls.Add(this.label17);
+            this.panel5.Controls.Add(this.radioButton6);
+            this.panel5.Controls.Add(this.radioButton3);
+            this.panel5.Location = new System.Drawing.Point(605, 208);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(302, 237);
+            this.panel5.TabIndex = 30;
+            this.panel5.Visible = false;
+            // 
+            // maskedTextBox3
+            // 
+            this.maskedTextBox3.Location = new System.Drawing.Point(9, 87);
+            this.maskedTextBox3.Mask = "0000 0000 0000 0000";
+            this.maskedTextBox3.Name = "maskedTextBox3";
+            this.maskedTextBox3.Size = new System.Drawing.Size(289, 20);
+            this.maskedTextBox3.TabIndex = 32;
+            // 
+            // maskedTextBox4
+            // 
+            this.maskedTextBox4.Location = new System.Drawing.Point(9, 169);
+            this.maskedTextBox4.Mask = "00/00";
+            this.maskedTextBox4.Name = "maskedTextBox4";
+            this.maskedTextBox4.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBox4.SkipLiterals = false;
+            this.maskedTextBox4.TabIndex = 10;
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(8, 127);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(290, 20);
+            this.textBox12.TabIndex = 9;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(5, 110);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(82, 13);
+            this.label20.TabIndex = 8;
+            this.label20.Text = "Nome do Titular";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(121, 153);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(110, 13);
+            this.label19.TabIndex = 7;
+            this.label19.Text = "Código de Segurança";
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(124, 170);
+            this.textBox11.MaxLength = 3;
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(107, 20);
+            this.textBox11.TabIndex = 6;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(6, 153);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(104, 13);
+            this.label18.TabIndex = 4;
+            this.label18.Text = "Data de Vencimento";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(6, 70);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(68, 13);
+            this.label17.TabIndex = 2;
+            this.label17.Text = "Nº do Cartão";
+            // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Location = new System.Drawing.Point(69, 4);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(58, 17);
+            this.radioButton6.TabIndex = 1;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.Text = "Crédito";
+            this.radioButton6.UseVisualStyleBackColor = true;
+            this.radioButton6.CheckedChanged += new System.EventHandler(this.radioButton6_CheckedChanged);
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(7, 4);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(56, 17);
+            this.radioButton3.TabIndex = 0;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Débito";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(246, 154);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(48, 13);
+            this.label21.TabIndex = 33;
+            this.label21.Text = "Parcelas";
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Items.AddRange(new object[] {
+            "1x",
+            "2x",
+            "3x",
+            "4x"});
+            this.comboBox5.Location = new System.Drawing.Point(248, 169);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(45, 21);
+            this.comboBox5.TabIndex = 34;
+            // 
+            // maskedTextBox9
+            // 
+            this.maskedTextBox9.Location = new System.Drawing.Point(10, 44);
+            this.maskedTextBox9.Mask = "$ 99999";
+            this.maskedTextBox9.Name = "maskedTextBox9";
+            this.maskedTextBox9.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBox9.TabIndex = 36;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(6, 24);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(38, 17);
+            this.label22.TabIndex = 35;
+            this.label22.Text = "Valor";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(7, 192);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(100, 17);
+            this.label23.TabIndex = 37;
+            this.label23.Text = "Valor Parcelado";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(10, 213);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 38;
+            // 
             // Agendamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1000, 500);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.label11);
@@ -419,14 +749,20 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Agendamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agendamento";
+            this.Load += new System.EventHandler(this.Agendamento_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -434,17 +770,14 @@
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel4;
@@ -463,5 +796,36 @@
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox4;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox5;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox8;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox7;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox6;
+        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox9;
+        private System.Windows.Forms.Label label22;
     }
 }

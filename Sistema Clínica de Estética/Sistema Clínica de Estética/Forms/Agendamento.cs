@@ -109,6 +109,63 @@ namespace Sistema_Clínica_de_Estética.Forms
             {
                 MessageBox.Show("Selecione todos os campos!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+            else
+            {
+                MessageBox.Show("Sessão agendada com sucesso!","",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if(textBox2.Text=="" || maskedTextBox2.Text == "" || textBox4.Text == "" || maskedTextBox1.Text == "")
+            {
+                MessageBox.Show("Preencha todos os campos!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (radioButton4.Checked == false && radioButton5.Checked == false)
+            {
+                MessageBox.Show("Insira o sexo do cliente!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Agendamento_Load(object sender, EventArgs e)
+        {
+            this.dateTimePicker1.MinDate = DateTime.Now.Date;
+            this.dateTimePicker1.Value = DateTime.Now.Date;
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(radioButton1.Checked == true)
+            {
+                panel1.Visible = true;
+                panel5.Visible = false;
+            }
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton2.Checked == true)
+            {
+                panel1.Visible = false;
+                panel5.Visible = true;
+            }
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton3.Checked == true)
+            {
+                label21.Visible = false;
+                comboBox5.Visible = false;
+            }
+        }
+        private void radioButton6_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton6.Checked == true)
+            {
+                label21.Visible = true;
+                comboBox5.Visible = true;
+            }
         }
     }
     }
