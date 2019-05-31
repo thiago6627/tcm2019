@@ -62,7 +62,8 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.maskedTextBox8 = new System.Windows.Forms.MaskedTextBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.maskedTextBox7 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox6 = new System.Windows.Forms.MaskedTextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -71,6 +72,12 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.maskedTextBox9 = new System.Windows.Forms.MaskedTextBox();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
@@ -81,16 +88,14 @@
             this.label17 = new System.Windows.Forms.Label();
             this.radioButton6 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.label21 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.maskedTextBox9 = new System.Windows.Forms.MaskedTextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -111,6 +116,7 @@
             this.button2.TabIndex = 7;
             this.button2.Text = "Consultar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel2
             // 
@@ -130,6 +136,8 @@
             this.maskedTextBox5.Name = "maskedTextBox5";
             this.maskedTextBox5.Size = new System.Drawing.Size(179, 20);
             this.maskedTextBox5.TabIndex = 33;
+            this.maskedTextBox5.Click += new System.EventHandler(this.maskedTextBox5_Click);
+            this.maskedTextBox5.Enter += new System.EventHandler(this.maskedTextBox5_Enter);
             // 
             // label2
             // 
@@ -147,6 +155,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(293, 20);
             this.textBox2.TabIndex = 2;
+            this.textBox2.Leave += new System.EventHandler(this.textBox2_Leave);
             // 
             // label3
             // 
@@ -319,6 +328,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.Enabled = false;
             this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
@@ -334,6 +344,7 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(714, 47);
@@ -344,6 +355,7 @@
             // 
             // comboBox2
             // 
+            this.comboBox2.Enabled = false;
             this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
@@ -400,6 +412,7 @@
             // 
             // comboBox4
             // 
+            this.comboBox4.Enabled = false;
             this.comboBox4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Items.AddRange(new object[] {
@@ -427,11 +440,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(878, 116);
+            this.button1.Location = new System.Drawing.Point(858, 116);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(95, 23);
             this.button1.TabIndex = 25;
-            this.button1.Text = "Agendar";
+            this.button1.Text = "Ir ao pagamento";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -439,7 +452,7 @@
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(536, 175);
+            this.radioButton1.Location = new System.Drawing.Point(159, 31);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(75, 21);
             this.radioButton1.TabIndex = 27;
@@ -452,7 +465,7 @@
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(628, 175);
+            this.radioButton2.Location = new System.Drawing.Point(251, 31);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(65, 21);
             this.radioButton2.TabIndex = 28;
@@ -463,41 +476,60 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.maskedTextBox8);
+            this.panel1.Controls.Add(this.button5);
+            this.panel1.Controls.Add(this.textBox3);
             this.panel1.Controls.Add(this.maskedTextBox7);
             this.panel1.Controls.Add(this.maskedTextBox6);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label12);
-            this.panel1.Location = new System.Drawing.Point(387, 195);
+            this.panel1.Location = new System.Drawing.Point(10, 51);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(181, 91);
+            this.panel1.Size = new System.Drawing.Size(181, 120);
             this.panel1.TabIndex = 29;
             this.panel1.Visible = false;
             // 
-            // maskedTextBox8
+            // button5
             // 
-            this.maskedTextBox8.Location = new System.Drawing.Point(73, 64);
-            this.maskedTextBox8.Mask = "$ ";
-            this.maskedTextBox8.Name = "maskedTextBox8";
-            this.maskedTextBox8.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox8.TabIndex = 34;
+            this.button5.Location = new System.Drawing.Point(56, 92);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 35;
+            this.button5.Text = "Limpar";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(73, 64);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.TabIndex = 34;
+            this.textBox3.Text = "R$ ";
+            this.textBox3.Enter += new System.EventHandler(this.textBox3_Enter);
             // 
             // maskedTextBox7
             // 
-            this.maskedTextBox7.Location = new System.Drawing.Point(73, 39);
-            this.maskedTextBox7.Mask = "$ ";
+            this.maskedTextBox7.Location = new System.Drawing.Point(73, 12);
+            this.maskedTextBox7.Mask = "$ 999";
             this.maskedTextBox7.Name = "maskedTextBox7";
             this.maskedTextBox7.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox7.TabIndex = 33;
+            this.maskedTextBox7.TabIndex = 32;
+            this.maskedTextBox7.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.maskedTextBox7.Click += new System.EventHandler(this.maskedTextBox7_Click);
+            this.maskedTextBox7.Enter += new System.EventHandler(this.maskedTextBox7_Enter);
             // 
             // maskedTextBox6
             // 
-            this.maskedTextBox6.Location = new System.Drawing.Point(73, 13);
-            this.maskedTextBox6.Mask = "$ 99999";
+            this.maskedTextBox6.Location = new System.Drawing.Point(73, 39);
+            this.maskedTextBox6.Mask = "$ 999";
             this.maskedTextBox6.Name = "maskedTextBox6";
             this.maskedTextBox6.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox6.TabIndex = 32;
+            this.maskedTextBox6.TabIndex = 33;
+            this.maskedTextBox6.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.maskedTextBox6.Click += new System.EventHandler(this.maskedTextBox6_Click);
+            this.maskedTextBox6.Enter += new System.EventHandler(this.maskedTextBox6_Enter);
+            this.maskedTextBox6.Leave += new System.EventHandler(this.maskedTextBox6_Leave);
             // 
             // label14
             // 
@@ -533,7 +565,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(387, 175);
+            this.label15.Location = new System.Drawing.Point(10, 31);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(135, 17);
             this.label15.TabIndex = 30;
@@ -543,7 +575,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(386, 148);
+            this.label16.Location = new System.Drawing.Point(9, 4);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(78, 17);
             this.label16.TabIndex = 31;
@@ -567,35 +599,108 @@
             this.panel5.Controls.Add(this.label17);
             this.panel5.Controls.Add(this.radioButton6);
             this.panel5.Controls.Add(this.radioButton3);
-            this.panel5.Location = new System.Drawing.Point(605, 208);
+            this.panel5.Location = new System.Drawing.Point(10, 51);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(302, 237);
             this.panel5.TabIndex = 30;
             this.panel5.Visible = false;
             // 
+            // textBox1
+            // 
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(10, 213);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 38;
+            this.textBox1.Visible = false;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(7, 192);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(100, 17);
+            this.label23.TabIndex = 37;
+            this.label23.Text = "Valor Parcelado";
+            this.label23.Visible = false;
+            // 
+            // maskedTextBox9
+            // 
+            this.maskedTextBox9.Enabled = false;
+            this.maskedTextBox9.Location = new System.Drawing.Point(10, 44);
+            this.maskedTextBox9.Mask = "$ 99999";
+            this.maskedTextBox9.Name = "maskedTextBox9";
+            this.maskedTextBox9.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBox9.TabIndex = 5;
+            this.maskedTextBox9.Click += new System.EventHandler(this.maskedTextBox9_Click);
+            this.maskedTextBox9.Enter += new System.EventHandler(this.maskedTextBox9_Enter);
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Items.AddRange(new object[] {
+            "1x",
+            "2x",
+            "3x",
+            "4x"});
+            this.comboBox5.Location = new System.Drawing.Point(248, 169);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(45, 21);
+            this.comboBox5.TabIndex = 10;
+            this.comboBox5.Visible = false;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(246, 154);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(48, 13);
+            this.label21.TabIndex = 33;
+            this.label21.Text = "Parcelas";
+            this.label21.Visible = false;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(6, 24);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(38, 17);
+            this.label22.TabIndex = 35;
+            this.label22.Text = "Valor";
+            // 
             // maskedTextBox3
             // 
+            this.maskedTextBox3.Enabled = false;
             this.maskedTextBox3.Location = new System.Drawing.Point(9, 87);
             this.maskedTextBox3.Mask = "0000 0000 0000 0000";
             this.maskedTextBox3.Name = "maskedTextBox3";
             this.maskedTextBox3.Size = new System.Drawing.Size(289, 20);
-            this.maskedTextBox3.TabIndex = 32;
+            this.maskedTextBox3.TabIndex = 6;
+            this.maskedTextBox3.Click += new System.EventHandler(this.maskedTextBox3_Click);
+            this.maskedTextBox3.Enter += new System.EventHandler(this.maskedTextBox3_Enter);
             // 
             // maskedTextBox4
             // 
+            this.maskedTextBox4.Enabled = false;
             this.maskedTextBox4.Location = new System.Drawing.Point(9, 169);
             this.maskedTextBox4.Mask = "00/00";
             this.maskedTextBox4.Name = "maskedTextBox4";
             this.maskedTextBox4.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBox4.SkipLiterals = false;
-            this.maskedTextBox4.TabIndex = 10;
+            this.maskedTextBox4.TabIndex = 8;
+            this.maskedTextBox4.Click += new System.EventHandler(this.maskedTextBox4_Click);
+            this.maskedTextBox4.Enter += new System.EventHandler(this.maskedTextBox4_Enter);
             // 
             // textBox12
             // 
+            this.textBox12.Enabled = false;
             this.textBox12.Location = new System.Drawing.Point(8, 127);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(290, 20);
-            this.textBox12.TabIndex = 9;
+            this.textBox12.TabIndex = 7;
+            this.textBox12.Leave += new System.EventHandler(this.textBox12_Leave);
             // 
             // label20
             // 
@@ -617,11 +722,12 @@
             // 
             // textBox11
             // 
+            this.textBox11.Enabled = false;
             this.textBox11.Location = new System.Drawing.Point(124, 170);
             this.textBox11.MaxLength = 3;
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(107, 20);
-            this.textBox11.TabIndex = 6;
+            this.textBox11.TabIndex = 9;
             // 
             // label18
             // 
@@ -665,63 +771,37 @@
             this.radioButton3.UseVisualStyleBackColor = true;
             this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
-            // label21
+            // menuStrip1
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(246, 154);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(48, 13);
-            this.label21.TabIndex = 33;
-            this.label21.Text = "Parcelas";
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1000, 24);
+            this.menuStrip1.TabIndex = 32;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // comboBox5
+            // panel6
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
-            "1x",
-            "2x",
-            "3x",
-            "4x"});
-            this.comboBox5.Location = new System.Drawing.Point(248, 169);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(45, 21);
-            this.comboBox5.TabIndex = 34;
+            this.panel6.Controls.Add(this.panel5);
+            this.panel6.Controls.Add(this.label16);
+            this.panel6.Controls.Add(this.label15);
+            this.panel6.Controls.Add(this.radioButton2);
+            this.panel6.Controls.Add(this.radioButton1);
+            this.panel6.Controls.Add(this.panel1);
+            this.panel6.Location = new System.Drawing.Point(377, 144);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(330, 299);
+            this.panel6.TabIndex = 33;
+            this.panel6.Visible = false;
             // 
-            // maskedTextBox9
+            // button6
             // 
-            this.maskedTextBox9.Location = new System.Drawing.Point(10, 44);
-            this.maskedTextBox9.Mask = "$ 99999";
-            this.maskedTextBox9.Name = "maskedTextBox9";
-            this.maskedTextBox9.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox9.TabIndex = 36;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(6, 24);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(38, 17);
-            this.label22.TabIndex = 35;
-            this.label22.Text = "Valor";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(7, 192);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(100, 17);
-            this.label23.TabIndex = 37;
-            this.label23.Text = "Valor Parcelado";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(10, 213);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 38;
+            this.button6.Location = new System.Drawing.Point(878, 405);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 34;
+            this.button6.Text = "Agendar";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // Agendamento
             // 
@@ -729,11 +809,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1000, 500);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.label11);
@@ -749,8 +826,9 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Agendamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agendamento";
@@ -763,6 +841,8 @@
             this.panel1.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -818,14 +898,18 @@
         private System.Windows.Forms.MaskedTextBox maskedTextBox3;
         private System.Windows.Forms.MaskedTextBox maskedTextBox4;
         private System.Windows.Forms.MaskedTextBox maskedTextBox5;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox8;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox7;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox6;
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.MaskedTextBox maskedTextBox9;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox6;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox7;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Button button6;
     }
 }
