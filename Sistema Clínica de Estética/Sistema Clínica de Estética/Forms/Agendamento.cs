@@ -165,6 +165,7 @@ namespace Sistema_Clínica_de_Estética.Forms
             {
                 panel1.Visible = true;
                 panel5.Visible = false;
+                maskedTextBox7.Focus();
             }
         }
 
@@ -190,6 +191,7 @@ namespace Sistema_Clínica_de_Estética.Forms
                 maskedTextBox4.Enabled = true;
                 textBox12.Enabled = true;
                 textBox11.Enabled = true;
+                maskedTextBox9.Focus();
             }
             else { }
         }
@@ -206,7 +208,9 @@ namespace Sistema_Clínica_de_Estética.Forms
                 textBox11.Enabled = true;
                 label23.Visible = true;
                 textBox1.Visible = true;
+                maskedTextBox9.Focus();
             }
+            else { }
         }
 
         private void maskedTextBox6_Leave(object sender, EventArgs e)
@@ -227,6 +231,9 @@ namespace Sistema_Clínica_de_Estética.Forms
                 else
                 {
                     MessageBox.Show("Insira os valores corretamente!","Erro");
+                    maskedTextBox6.Focus();
+                    maskedTextBox6.Text = "";
+                    maskedTextBox6.SelectionStart = 3;
                 }
             }
         }
