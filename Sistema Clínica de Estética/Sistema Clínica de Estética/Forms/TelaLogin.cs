@@ -93,8 +93,6 @@ namespace Sistema_Clínica_de_Estética
         {
             if(textBox1.Text=="admin" && textBox2.Text == "admin")
             {
-                /*MenuPrincipal menu = new MenuPrincipal();
-                menu.ShowDialog();*/
                 this.Close();
                 nt = new Thread(novoform);
                 nt.SetApartmentState(ApartmentState.STA);
@@ -113,12 +111,29 @@ namespace Sistema_Clínica_de_Estética
 
         private void textBox2_Enter(object sender, EventArgs e)
         {
-            textBox2.Text = "";
+            if (textBox2.Text == "Senha")
+            {
+                textBox2.Clear();
+                textBox2.PasswordChar = '*';
+                textBox2.ForeColor = Color.White;
+            }
+            else
+            {
+
+            }
         }
 
         private void textBox1_Enter(object sender, EventArgs e)
         {
-            textBox1.Text = "";
+            if (textBox1.Text == "Usuário")
+            {
+                textBox1.Clear();
+                textBox1.ForeColor = Color.White;
+            }
+            else
+            {
+
+            }
         }
     }
 }

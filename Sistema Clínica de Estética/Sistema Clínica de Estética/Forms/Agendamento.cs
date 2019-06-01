@@ -323,6 +323,10 @@ namespace Sistema_Clínica_de_Estética.Forms
             {
                 MessageBox.Show("Preencha todos os campos!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+            else
+            {
+                MessageBox.Show("Sessão agendada com sucesso!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

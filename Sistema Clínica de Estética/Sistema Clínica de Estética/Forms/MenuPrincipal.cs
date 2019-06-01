@@ -22,7 +22,7 @@ namespace Sistema_Clínica_de_Estética
         {
             Close();
         }
-        Thread nt;
+        
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
