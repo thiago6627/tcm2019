@@ -33,7 +33,7 @@ namespace Sistema_Clínica_de_Estética
 
         private void novoform()
         {
-            Application.Run(new Forms.Agendamento());
+            Application.Run(new Forms.txt__recebido());
         }
 
         private void button2_Click(object sender, EventArgs e)

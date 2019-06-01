@@ -9,7 +9,6 @@ D:\#ARQUIVOS\Escola\ADS\Git\tcm2019\Sistema Clínica de Estética\Sistema Clíni
 D:\#ARQUIVOS\Escola\ADS\Git\tcm2019\Sistema Clínica de Estética\Sistema Clínica de Estética\obj\Debug\Sistema Clínica de Estética.exe
 D:\#ARQUIVOS\Escola\ADS\Git\tcm2019\Sistema Clínica de Estética\Sistema Clínica de Estética\obj\Debug\Sistema Clínica de Estética.pdb
 D:\#ARQUIVOS\Escola\ADS\Git\tcm2019\Sistema Clínica de Estética\Sistema Clínica de Estética\obj\Debug\Sistema_Clínica_de_Estética.MenuPrincipal.resources
-D:\#ARQUIVOS\Escola\ADS\Git\tcm2019\Sistema Clínica de Estética\Sistema Clínica de Estética\obj\Debug\Sistema_Clínica_de_Estética.Forms.Agendamento.resources
 D:\#ARQUIVOS\Escola\ADS\Git\tcm2019\Sistema Clínica de Estética\Sistema Clínica de Estética\obj\Debug\Sistema_Clínica_de_Estética.Forms.Funcionario.resources
 T:\Usuarios\INFORMATICA\1A MODULAR TARDE\Thiago A\TCM\tcm2019\Sistema Clínica de Estética\Sistema Clínica de Estética\bin\Debug\Sistema Clínica de Estética.exe.config
 T:\Usuarios\INFORMATICA\1A MODULAR TARDE\Thiago A\TCM\tcm2019\Sistema Clínica de Estética\Sistema Clínica de Estética\bin\Debug\Sistema Clínica de Estética.exe
@@ -24,3 +23,4 @@ T:\Usuarios\INFORMATICA\1A MODULAR TARDE\Thiago A\TCM\tcm2019\Sistema Clínica d
 T:\Usuarios\INFORMATICA\1A MODULAR TARDE\Thiago A\TCM\tcm2019\Sistema Clínica de Estética\Sistema Clínica de Estética\obj\Debug\Sistema Clínica de Estética.csproj.CoreCompileInputs.cache
 T:\Usuarios\INFORMATICA\1A MODULAR TARDE\Thiago A\TCM\tcm2019\Sistema Clínica de Estética\Sistema Clínica de Estética\obj\Debug\Sistema Clínica de Estética.exe
 T:\Usuarios\INFORMATICA\1A MODULAR TARDE\Thiago A\TCM\tcm2019\Sistema Clínica de Estética\Sistema Clínica de Estética\obj\Debug\Sistema Clínica de Estética.pdb
+D:\#ARQUIVOS\Escola\ADS\Git\tcm2019\Sistema Clínica de Estética\Sistema Clínica de Estética\obj\Debug\Sistema_Clínica_de_Estética.Forms.txt__recebido.resources

@@ -11,9 +11,9 @@ using System.Threading;
 
 namespace Sistema_Clínica_de_Estética.Forms
 {
-    public partial class Agendamento : Form
+    public partial class txt__recebido : Form
     {
-        public Agendamento()
+        public txt__recebido()
         {
             InitializeComponent();
         }
@@ -32,7 +32,7 @@ namespace Sistema_Clínica_de_Estética.Forms
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(comboBox1.SelectedIndex == -1)
+            if (comboBox1.SelectedIndex == -1)
             {
                 label11.Visible = false;
                 comboBox4.Visible = false;
@@ -42,7 +42,7 @@ namespace Sistema_Clínica_de_Estética.Forms
                 label11.Visible = true;
                 comboBox4.Visible = true;
             }
-            if(comboBox1.SelectedIndex == 0)
+            if (comboBox1.SelectedIndex == 0)
             {
                 comboBox4.Text = "";
                 comboBox4.Items.Clear();
@@ -95,7 +95,7 @@ namespace Sistema_Clínica_de_Estética.Forms
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(comboBox3.SelectedItem == "Cadastrado")
+            if (comboBox3.SelectedItem == "Cadastrado")
             {
                 panel2.Visible = true;
                 panel3.Visible = false;
@@ -105,7 +105,7 @@ namespace Sistema_Clínica_de_Estética.Forms
             {
                 panel2.Visible = false;
                 panel3.Visible = true;
-                textBox2.Focus();
+                maskedTextBox6.Focus();
             }
         }
 
@@ -118,27 +118,64 @@ namespace Sistema_Clínica_de_Estética.Forms
             else
             {
                 panel6.Visible = true;
+                button6.Visible = true;
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if(textBox2.Text=="" || maskedTextBox2.Text == "" || textBox4.Text == "" || maskedTextBox1.Text == "")
+            if (maskedTextBox6.Text == "" || maskedTextBox2.Text == "" || textBox4.Text == "" || maskedTextBox1.Text == "")
             {
-                MessageBox.Show("Preencha todos os campos!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Preencha todos os campos!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (radioButton4.Checked == false && radioButton5.Checked == false)
             {
-                MessageBox.Show("Insira o sexo do cliente!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Insira o sexo do cliente!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (maskedTextBox2.MaskFull == false)
             {
                 MessageBox.Show("Preencha o telefone por completo!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                maskedTextBox2.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                if (maskedTextBox2.Text.Length >= 1 && maskedTextBox2.Text.Length <= 2)
+                {
+                    maskedTextBox2.SelectionStart = maskedTextBox2.Text.Length + 1;
+                }
+                else if (maskedTextBox2.Text.Length >= 3 && maskedTextBox2.Text.Length <= 7)
+                {
+                    maskedTextBox2.SelectionStart = maskedTextBox2.Text.Length + 3;
+                }
+                else if (maskedTextBox2.Text.Length >= 8)
+                {
+                    maskedTextBox2.SelectionStart = maskedTextBox2.Text.Length + 4;
+                }
+                else
+                {
+                    maskedTextBox2.SelectionStart = 0;
+                }
                 maskedTextBox2.Focus();
             }
             else if (maskedTextBox1.MaskFull == false)
             {
                 MessageBox.Show("Preencha o CPF por completo!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                maskedTextBox1.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                string cpf = maskedTextBox1.Text;
+                maskedTextBox1.Text = cpf;
+                if (cpf.Length >= 4 && cpf.Length < 7)
+                {
+                    maskedTextBox1.SelectionStart = cpf.Length + 1;
+                }
+                else if (cpf.Length >= 7 && cpf.Length < 10)
+                {
+                    maskedTextBox1.SelectionStart = cpf.Length + 2;
+                }
+                else if (cpf.Length >= 10)
+                {
+                    maskedTextBox1.SelectionStart = cpf.Length + 3;
+                }
+                else
+                {
+                    maskedTextBox1.SelectionStart = cpf.Length;
+                }
                 maskedTextBox1.Focus();
             }
             else
@@ -161,11 +198,11 @@ namespace Sistema_Clínica_de_Estética.Forms
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            if(radioButton1.Checked == true)
+            if (radioButton1.Checked == true)
             {
                 panel1.Visible = true;
                 panel5.Visible = false;
-                maskedTextBox7.Focus();
+                txt_valor.Focus();
             }
         }
 
@@ -186,12 +223,12 @@ namespace Sistema_Clínica_de_Estética.Forms
                 comboBox5.Visible = false;
                 label23.Visible = false;
                 textBox1.Visible = false;
-                maskedTextBox9.Enabled = true;
+                textBox2.Enabled = true;
                 maskedTextBox3.Enabled = true;
                 maskedTextBox4.Enabled = true;
-                textBox12.Enabled = true;
+                maskedTextBox7.Enabled = true;
                 textBox11.Enabled = true;
-                maskedTextBox9.Focus();
+                textBox2.Focus();
             }
             else { }
         }
@@ -201,103 +238,56 @@ namespace Sistema_Clínica_de_Estética.Forms
             {
                 label21.Visible = true;
                 comboBox5.Visible = true;
-                maskedTextBox9.Enabled = true;
+                textBox2.Enabled = true;
                 maskedTextBox3.Enabled = true;
                 maskedTextBox4.Enabled = true;
-                textBox12.Enabled = true;
+                maskedTextBox7.Enabled = true;
                 textBox11.Enabled = true;
                 label23.Visible = true;
                 textBox1.Visible = true;
-                maskedTextBox9.Focus();
+                textBox2.Focus();
             }
             else { }
         }
 
-        private void maskedTextBox6_Leave(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
-            if (maskedTextBox7.Text == "" || maskedTextBox6.Text == "")
+            txt_valor.Text = "";
+            txt_recebido.Text = "";
+            textBox3.Text = "";
+        }
+        private void maskedTextBox3_Click(object sender, EventArgs e)
+        {
+            maskedTextBox3.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            if (maskedTextBox3.Text.Length >= 5 && maskedTextBox3.Text.Length <=8)
             {
-
+                maskedTextBox3.SelectionStart = maskedTextBox3.Text.Length + 1;
+            }
+            else if (maskedTextBox3.Text.Length >= 9 && maskedTextBox3.Text.Length <= 12)
+            {
+                maskedTextBox3.SelectionStart = maskedTextBox3.Text.Length + 2;
+            }
+            else if (maskedTextBox3.Text.Length >= 13)
+            {
+                maskedTextBox3.SelectionStart = maskedTextBox3.Text.Length + 3;
             }
             else
             {
-                double valor = double.Parse(maskedTextBox7.Text);
-                double recebido = double.Parse(maskedTextBox6.Text);
-                double troco = recebido - valor;
-                if(troco >= 0)
-                {
-                    textBox3.Text = "R$ " + troco.ToString("0");
-                }
-                else
-                {
-                    MessageBox.Show("Insira os valores corretamente!","Erro");
-                    maskedTextBox6.Focus();
-                    maskedTextBox6.Text = "";
-                    maskedTextBox6.SelectionStart = 3;
-                }
+                maskedTextBox3.SelectionStart = maskedTextBox3.Text.Length;
             }
-        }
-
-        private void maskedTextBox7_Click(object sender, EventArgs e)
-        {
-            maskedTextBox7.SelectionStart = 3;
-        }
-
-        private void maskedTextBox7_Enter(object sender, EventArgs e)
-        {
-            maskedTextBox7.SelectionStart = 3;
-        }
-
-        private void maskedTextBox6_Click(object sender, EventArgs e)
-        {
-            maskedTextBox6.SelectionStart = 3;
-        }
-
-        private void maskedTextBox6_Enter(object sender, EventArgs e)
-        {
-            maskedTextBox6.SelectionStart = 2;
-        }
-
-        private void textBox3_Enter(object sender, EventArgs e)
-        {
-            textBox3.SelectionStart = textBox3.SelectionStart + textBox3.SelectionLength;
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            maskedTextBox6.Text = "";
-            maskedTextBox7.Text = "";
-            textBox3.Text = "";
-        }
-
-        private void maskedTextBox9_Enter(object sender, EventArgs e)
-        {
-            maskedTextBox9.SelectionStart = 3;
-        }
-
-        private void maskedTextBox9_Click(object sender, EventArgs e)
-        {
-            maskedTextBox9.SelectionStart = 3;
-        }
-
-        private void maskedTextBox3_Click(object sender, EventArgs e)
-        {
-            maskedTextBox3.SelectionStart = 0;
-        }
-
-        private void maskedTextBox3_Enter(object sender, EventArgs e)
-        {
-            maskedTextBox3.SelectionStart = 0;
         }
 
         private void maskedTextBox4_Click(object sender, EventArgs e)
         {
-            maskedTextBox4.SelectionStart = 0;
-        }
-
-        private void maskedTextBox4_Enter(object sender, EventArgs e)
-        {
-            maskedTextBox4.SelectionStart = 0;
+            maskedTextBox4.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            if (maskedTextBox4.Text.Length >= 3)
+            {
+                maskedTextBox4.SelectionStart = maskedTextBox4.Text.Length + 1;
+            }
+            else
+            {
+                maskedTextBox4.SelectionStart = maskedTextBox4.Text.Length;
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -310,23 +300,26 @@ namespace Sistema_Clínica_de_Estética.Forms
             {
                 MessageBox.Show("Escolha 'Débito' ou 'Crédito'", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            else if (radioButton1.Checked==false && (maskedTextBox9.Text == "" || maskedTextBox3.Text == "" || textBox12.Text == "" || maskedTextBox4.Text == "" || textBox11.Text == ""))
+            else if (radioButton1.Checked == false && (textBox2.Text == "" || maskedTextBox3.Text == "" || maskedTextBox7.Text == "" || maskedTextBox4.Text == "" || textBox11.Text == ""))
             {
                 MessageBox.Show("Preencha todos os campos!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (radioButton1.Checked == false && (maskedTextBox3.MaskFull == false))
             {
                 MessageBox.Show("Preencha o número do cartão POR COMPLETO!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                maskedTextBox3.Focus();
             }
             else if (radioButton1.Checked == false && (maskedTextBox4.MaskFull == false))
             {
                 MessageBox.Show("Preencha a data de vencimento CORRETAMENTE!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                maskedTextBox4.Focus();
             }
             else if (radioButton1.Checked == false && (textBox11.TextLength < 3))
             {
                 MessageBox.Show("Preencha o código de segurança CORRETAMENTE", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                textBox11.Focus();
             }
-            else if (radioButton1.Checked==true &&(maskedTextBox6.Text=="" || maskedTextBox7.Text=="" || textBox3.Text == ""))
+            else if (radioButton1.Checked == true && (txt_valor.Text == "" || txt_recebido.Text == "" || textBox3.Text == ""))
             {
                 MessageBox.Show("Preencha todos os campos!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
@@ -336,7 +329,28 @@ namespace Sistema_Clínica_de_Estética.Forms
         {
             if (maskedTextBox5.MaskFull == false)
             {
-                MessageBox.Show("Insira o CPF do cliente!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Insira o CPF do cliente!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                maskedTextBox5.Focus();
+                maskedTextBox5.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                string cpf = maskedTextBox5.Text;
+                maskedTextBox5.Text = cpf;
+                if (cpf.Length >= 4 && cpf.Length < 7)
+                {
+                    maskedTextBox5.SelectionStart = cpf.Length + 1;
+                }
+                else if (cpf.Length >= 7 && cpf.Length < 10)
+                {
+                    maskedTextBox5.SelectionStart = cpf.Length + 2;
+                }
+                else if (cpf.Length >= 10)
+                {
+                    maskedTextBox5.SelectionStart = cpf.Length + 3;
+                }
+                else
+                {
+                    maskedTextBox5.SelectionStart = cpf.Length;
+                }
+
             }
             else
             {
@@ -350,22 +364,231 @@ namespace Sistema_Clínica_de_Estética.Forms
 
         private void maskedTextBox5_Click(object sender, EventArgs e)
         {
-            maskedTextBox5.SelectionStart = 0;
+            maskedTextBox5.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            string cpf = maskedTextBox5.Text;
+            maskedTextBox5.Text = cpf;
+            if (cpf.Length >= 4 && cpf.Length < 7)
+            {
+                maskedTextBox5.SelectionStart = cpf.Length + 1;
+            }
+            else if (cpf.Length >= 7 && cpf.Length < 10)
+            {
+                maskedTextBox5.SelectionStart = cpf.Length + 2;
+            }
+            else if (cpf.Length >= 10)
+            {
+                maskedTextBox5.SelectionStart = cpf.Length + 3;
+            }
+            else
+            {
+                maskedTextBox5.SelectionStart = cpf.Length;
+            }
         }
 
-        private void maskedTextBox5_Enter(object sender, EventArgs e)
+        private void txt_valor_Enter(object sender, EventArgs e)
         {
-            maskedTextBox5.SelectionStart = 0;
+            txt_valor.SelectionStart = 3 + (txt_valor.TextLength - 3);
         }
 
-        private void textBox2_Leave(object sender, EventArgs e)
+        private void txt_valor_Click(object sender, EventArgs e)
         {
-            textBox2.Text = textBox2.Text.ToUpper();
+            txt_valor.SelectionStart = 3 + (txt_valor.TextLength - 3);
         }
 
-        private void textBox12_Leave(object sender, EventArgs e)
+        private void txt_valor_TextChanged(object sender, EventArgs e)
         {
-            textBox12.Text = textBox12.Text.ToUpper();
+            if (txt_valor.TextLength <= 3)
+            {
+                txt_valor.Text = "R$ ";
+                txt_valor.SelectionStart = 3 + (txt_valor.TextLength - 3);
+            }
+            else { }
+
+            if (txt_valor.Text == "R$ " || txt_recebido.Text == "R$ ")
+            {
+
+            }
+            else
+            {
+                string valor = txt_valor.Text;
+                string recebido = txt_recebido.Text;
+                decimal valores = decimal.Parse(valor.Replace("R$ ", ""));
+                decimal recebidos = decimal.Parse(recebido.Replace("R$ ", ""));
+                decimal troco = recebidos - valores;
+                if (troco >= 0)
+                {
+                    textBox3.Text = "R$ " + troco.ToString("0.00");
+                }
+                else
+                {
+                    textBox3.Text = "";
+                }
+            }
+        }
+
+        private void txt_recebido_Enter(object sender, EventArgs e)
+        {
+            txt_recebido.SelectionStart = 3 + (txt_valor.TextLength - 3);
+        }
+
+        private void txt_recebido_Click(object sender, EventArgs e)
+        {
+            txt_recebido.SelectionStart = 3 + (txt_valor.TextLength - 3);
+        }
+
+        private void txt_recebido_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_recebido.TextLength <= 3)
+            {
+                txt_recebido.Text = "R$ ";
+                txt_recebido.SelectionStart = 3 + (txt_recebido.TextLength - 3);
+            }
+            else { }
+
+            if (txt_valor.Text == "R$ " || txt_recebido.Text == "R$ ")
+            {
+
+            }
+            else
+            {
+                string valor = txt_valor.Text;
+                string recebido = txt_recebido.Text;
+                decimal valores = decimal.Parse(valor.Replace("R$ ", ""));
+                decimal recebidos = decimal.Parse(recebido.Replace("R$ ", ""));
+                decimal troco = recebidos - valores;
+                if (troco >= 0)
+                {
+                    textBox3.Text = "R$ " + troco.ToString("0.00");
+                }
+                else
+                {
+                    textBox3.Text = "";
+                }
+            }
+        }
+
+        private void maskedTextBox6_Click(object sender, EventArgs e)
+        {
+            maskedTextBox6.SelectionStart = maskedTextBox6.Text.Length;
+        }
+
+        private void maskedTextBox2_Click(object sender, EventArgs e)
+        {
+            maskedTextBox2.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            if (maskedTextBox2.Text.Length >= 1 && maskedTextBox2.Text.Length <= 2)
+            {
+                maskedTextBox2.SelectionStart = maskedTextBox2.Text.Length + 1;
+            }
+            else if (maskedTextBox2.Text.Length >= 3 && maskedTextBox2.Text.Length <= 7)
+            {
+                maskedTextBox2.SelectionStart = maskedTextBox2.Text.Length + 3;
+            }
+            else if (maskedTextBox2.Text.Length >= 8)
+            {
+                maskedTextBox2.SelectionStart = maskedTextBox2.Text.Length + 4;
+            }
+            else
+            {
+                maskedTextBox2.SelectionStart = 0;
+            }
+        }
+
+        private void maskedTextBox1_Click(object sender, EventArgs e)
+        {
+            maskedTextBox1.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            string cpf = maskedTextBox1.Text;
+            maskedTextBox1.Text = cpf;
+            if (cpf.Length >= 4 && cpf.Length < 7)
+            {
+                maskedTextBox1.SelectionStart = cpf.Length + 1;
+            }
+            else if (cpf.Length >= 7 && cpf.Length < 10)
+            {
+                maskedTextBox1.SelectionStart = cpf.Length + 2;
+            }
+            else if (cpf.Length >= 10)
+            {
+                maskedTextBox1.SelectionStart = cpf.Length + 3;
+            }
+            else
+            {
+                maskedTextBox1.SelectionStart = cpf.Length;
+            }
+        }
+
+        private void textBox2_Click(object sender, EventArgs e)
+        {
+            textBox2.SelectionStart = 3 + (textBox2.TextLength - 3);
+        }
+
+        private void textBox2_Enter(object sender, EventArgs e)
+        {
+            textBox2.SelectionStart = 3 + (textBox2.TextLength - 3);
+        }
+
+        decimal valor;
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox2.TextLength <= 3)
+            {
+                textBox2.Text = "R$ ";
+                textBox2.SelectionStart = 3 + (textBox2.TextLength - 3);
+            }
+            else { }
+
+            if (textBox2.Text == "R$ ")
+            {
+                textBox1.Text = "";
+            }
+            else
+            {
+                valor = decimal.Parse(textBox2.Text.Replace("R$ ", ""));
+                decimal valorParcelado;
+                if (comboBox5.SelectedIndex == 0)
+                {
+                    valorParcelado = valor / 1;
+                }
+                else if (comboBox5.SelectedIndex == 1)
+                {
+                    valorParcelado = valor / 2;
+                }
+                else if (comboBox5.SelectedIndex == 2)
+                {
+                    valorParcelado = valor / 3;
+                }
+                else
+                {
+                    valorParcelado = valor / 4;
+                }
+                textBox1.Text = "R$ " + valorParcelado.ToString("0.00");
+            }
+        }
+
+        private void maskedTextBox7_Click(object sender, EventArgs e)
+        {
+            maskedTextBox7.SelectionStart = maskedTextBox7.Text.Length;
+        }
+        
+        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            decimal valorParcelado;
+            if (comboBox5.SelectedIndex == 0)
+            {
+                valorParcelado = valor / 1;
+            }
+            else if (comboBox5.SelectedIndex == 1)
+            {
+                valorParcelado = valor / 2;
+            }
+            else if (comboBox5.SelectedIndex == 2)
+            {
+                valorParcelado = valor / 3;
+            }
+            else
+            {
+                valorParcelado = valor / 4;
+            }
+            textBox1.Text = "R$ " + valorParcelado.ToString("0.00");
         }
     }
-    }
+}
