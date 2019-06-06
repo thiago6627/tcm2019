@@ -52,11 +52,11 @@
     <Compile Include="Forms\Agendamento.Designer.cs">
       <DependentUpon>Agendamento.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Funcionario.cs">
+    <Compile Include="Forms\CadFunc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Funcionario.Designer.cs">
-      <DependentUpon>Funcionario.cs</DependentUpon>
+    <Compile Include="Forms\CadFunc.Designer.cs">
+      <DependentUpon>CadFunc.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\TelaLogin.cs">
       <SubType>Form</SubType>
@@ -75,8 +75,8 @@
     <EmbeddedResource Include="Forms\Agendamento.resx">
       <DependentUpon>Agendamento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Funcionario.resx">
-      <DependentUpon>Funcionario.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\CadFunc.resx">
+      <DependentUpon>CadFunc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>

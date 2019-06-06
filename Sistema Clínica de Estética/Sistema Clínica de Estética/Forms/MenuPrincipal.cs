@@ -45,7 +45,7 @@ namespace Sistema_Clínica_de_Estética
 
         private void formFuncionario()
         {
-            Application.Run(new Forms.Funcionario());
+            Application.Run(new Forms.CadFunc());
         }
     }
 }

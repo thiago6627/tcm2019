@@ -8,14 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Data.SqlClient;
 
 namespace Sistema_Clínica_de_Estética.Forms
 {
     public partial class txt__recebido : Form
     {
+        SqlConnection crown = new SqlConnection("Data source = localhost; Initial Catalog = TcmClinica; user =sa; password=1234567");
+        SqlCommand comando = new SqlCommand();
+
         public txt__recebido()
         {
             InitializeComponent();
+            comando.Connection = crown;
         }
         Thread nt;
         private void button4_Click(object sender, EventArgs e)
@@ -185,6 +190,7 @@ namespace Sistema_Clínica_de_Estética.Forms
                 comboBox2.Enabled = true;
                 comboBox4.Enabled = true;
                 dateTimePicker1.Enabled = true;
+                button1.Enabled = true;
 
             }
         }
@@ -227,7 +233,7 @@ namespace Sistema_Clínica_de_Estética.Forms
                 maskedTextBox3.Enabled = true;
                 maskedTextBox4.Enabled = true;
                 maskedTextBox7.Enabled = true;
-                textBox11.Enabled = true;
+                maskedTextBox8.Enabled = true;
                 textBox2.Focus();
             }
             else { }
@@ -242,7 +248,7 @@ namespace Sistema_Clínica_de_Estética.Forms
                 maskedTextBox3.Enabled = true;
                 maskedTextBox4.Enabled = true;
                 maskedTextBox7.Enabled = true;
-                textBox11.Enabled = true;
+                maskedTextBox8.Enabled = true;
                 label23.Visible = true;
                 textBox1.Visible = true;
                 textBox2.Focus();
@@ -289,7 +295,7 @@ namespace Sistema_Clínica_de_Estética.Forms
                 maskedTextBox4.SelectionStart = maskedTextBox4.Text.Length;
             }
         }
-
+        string val;
         private void button6_Click(object sender, EventArgs e)
         {
             if (radioButton1.Checked == false && radioButton2.Checked == false)
@@ -300,7 +306,7 @@ namespace Sistema_Clínica_de_Estética.Forms
             {
                 MessageBox.Show("Escolha 'Débito' ou 'Crédito'", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            else if (radioButton1.Checked == false && (textBox2.Text == "" || maskedTextBox3.Text == "" || maskedTextBox7.Text == "" || maskedTextBox4.Text == "" || textBox11.Text == ""))
+            else if (radioButton1.Checked == false && (textBox2.Text == "" || maskedTextBox3.Text == "" || maskedTextBox7.Text == "" || maskedTextBox4.Text == "" || maskedTextBox8.Text == ""))
             {
                 MessageBox.Show("Preencha todos os campos!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
@@ -314,10 +320,10 @@ namespace Sistema_Clínica_de_Estética.Forms
                 MessageBox.Show("Preencha a data de vencimento CORRETAMENTE!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 maskedTextBox4.Focus();
             }
-            else if (radioButton1.Checked == false && (textBox11.TextLength < 3))
+            else if (radioButton1.Checked == false && (maskedTextBox8.MaskFull == false))
             {
                 MessageBox.Show("Preencha o código de segurança CORRETAMENTE", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                textBox11.Focus();
+                maskedTextBox8.Focus();
             }
             else if (radioButton1.Checked == true && (txt_valor.Text == "" || txt_recebido.Text == "" || textBox3.Text == ""))
             {
@@ -325,11 +331,43 @@ namespace Sistema_Clínica_de_Estética.Forms
             }
             else
             {
+                crown.Open();
+                string s;
+
+                if (comboBox3.SelectedIndex==1)
+                {
+                    if (radioButton4.Checked == true)
+                    {
+                        s = "Masculino";
+                    }
+                    else
+                    {
+                        s = "Feminino";
+                    }
+                   
+                    comando.CommandText = "INSERT INTO tbl_cliente (nmcli,emailcli,cpfcli,ntel,sexo) values ('" + maskedTextBox6.Text + "','" + textBox4.Text + "','" + maskedTextBox1.Text + "','" + maskedTextBox2.Text + "','"+ s+"')";
+                    comando.ExecuteNonQuery();
+                }
+                comando.CommandText = "INSERT INTO tbl_agendamento (data,hora) values ('" + dateTimePicker1.Value + "','" + comboBox2.SelectedItem + "')";
+                
+                if (radioButton1.Checked == true && radioButton2.Checked == false)
+                {
+                    val = txt_valor.Text.Replace("R$ ", "").Replace(',', '.');
+                }
+                else if (radioButton2.Checked == true && radioButton1.Checked == false)
+                {
+                    val = textBox2.Text.Replace("R$ ", "").Replace(',', '.');
+                }
+                else { }
+                comando.CommandText = "INSERT INTO tbl_servico (nm_serv,tipo_serv,vl_serv) values ('"+comboBox4.SelectedItem+"','"+comboBox1.SelectedItem+"','"+ val + "')";
+                comando.ExecuteNonQuery();
+                crown.Close();
                 MessageBox.Show("Sessão agendada com sucesso!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+        
 
-        private void button2_Click(object sender, EventArgs e)
+    private void button2_Click(object sender, EventArgs e)
         {
             if (maskedTextBox5.MaskFull == false)
             {
@@ -362,6 +400,7 @@ namespace Sistema_Clínica_de_Estética.Forms
                 comboBox2.Enabled = true;
                 comboBox4.Enabled = true;
                 dateTimePicker1.Enabled = true;
+                button1.Enabled = true;
 
             }
         }
@@ -416,9 +455,9 @@ namespace Sistema_Clínica_de_Estética.Forms
             {
                 string valor = txt_valor.Text;
                 string recebido = txt_recebido.Text;
-                decimal valores = decimal.Parse(valor.Replace("R$ ", ""));
-                decimal recebidos = decimal.Parse(recebido.Replace("R$ ", ""));
-                decimal troco = recebidos - valores;
+                double valores = double.Parse(valor.Replace("R$ ", ""));
+                double recebidos = double.Parse(recebido.Replace("R$ ", ""));
+                double troco = recebidos - valores;
                 if (troco >= 0)
                 {
                     textBox3.Text = "R$ " + troco.ToString("0.00");
@@ -457,9 +496,9 @@ namespace Sistema_Clínica_de_Estética.Forms
             {
                 string valor = txt_valor.Text;
                 string recebido = txt_recebido.Text;
-                decimal valores = decimal.Parse(valor.Replace("R$ ", ""));
-                decimal recebidos = decimal.Parse(recebido.Replace("R$ ", ""));
-                decimal troco = recebidos - valores;
+                double valores = double.Parse(valor.Replace("R$ ", ""));
+                double recebidos = double.Parse(recebido.Replace("R$ ", ""));
+                double troco = recebidos - valores;
                 if (troco >= 0)
                 {
                     textBox3.Text = "R$ " + troco.ToString("0.00");
@@ -593,6 +632,18 @@ namespace Sistema_Clínica_de_Estética.Forms
                 valorParcelado = valor / 4;
             }
             textBox1.Text = "R$ " + valorParcelado.ToString("0.00");
+        }
+
+        private void maskedTextBox8_Click(object sender, EventArgs e)
+        {
+            maskedTextBox8.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            maskedTextBox8.SelectionStart = maskedTextBox8.Text.Length;
+        }
+
+        private void maskedTextBox8_Enter(object sender, EventArgs e)
+        {
+            maskedTextBox8.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            maskedTextBox8.SelectionStart = maskedTextBox8.Text.Length;
         }
     }
 }
