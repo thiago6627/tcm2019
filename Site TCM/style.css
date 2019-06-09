@@ -9,23 +9,31 @@
 .titulo {
 	font-family: 'Work Sans', sans-serif;
 	font-size:4vw;
-	color:white;
+	color:rgb(255,255,255);
 	margin-left:13%;
 	margin-bottom:0;
 }
 .titulo2 {
-	font-family: 'Gotham Book', sans-serif;
+	font-family: 'Work Sans', sans-serif;
 	font-size:2.5vw;
-	color:rgb(65,65,65);
+	color:rgb(0,0,0);
 	margin-left:10%;
 	margin-bottom:0;
+}
+.titulo3 {
+	font-family: 'Work Sans', sans-serif;
+	font-size:2.5vw;
+	color:rgba(0,0,0,0.7);
+	margin-left:10%;
+	margin-right:10%;
+	text-align:center;
 }
 .sinopse {
 	font-family: 'Karla', sans-serif;
 	font-size:1.5vw;
 	padding-left:18%;
 	text-align:justify;
-	color:white;
+	color:rgb(255,255,255);
 	margin-right:13%;
 }
 .sinopse-grande {
@@ -33,7 +41,7 @@
 	font-size:4vw;
 	padding-left:18%;
 	text-align:center;
-	color:white;
+	color:rgb(255,255,255);
 	margin-right:13%;
 	text-transform:uppercase;
 	cursor:default;
@@ -43,8 +51,8 @@
 	font-size:1.5vw;
 	padding-left:18%;
 	text-align:justify;
-	color:black;
-	margin-right:10%;
+	color:rgb(0,0,0);
+	margin-right:13%;
 }
 body#home {
 	background-image: url("background.jpeg");
@@ -53,19 +61,35 @@ body#home {
 	padding:0;
 }
 body#servicos {
-	background-image: url("background-cortado2.jpg");
+	background-image: url("background2.jpg");
 	background-repeat: no-repeat;
 	background-size: contain;
 	margin:0;
 	padding:0;
 }
 body#empresa {
-	background-image:url("background6.jpg");
+	background-image:url("background3.jpg");
 	background-repeat: no-repeat;
 	background-size: contain;
 	margin:0;
 	padding:0;
 }
+body#contato{
+	background-image:url("background4.png");
+	background-repeat:no-repeat;
+	background-size:contain;
+	margin:0;
+	padding:0;
+}
+body#suporte{
+	background-image:url("background5.png");
+	background-repeat:no-repeat;
+	background-size:contain;
+	margin:0;
+	padding:0;
+	background-color:black;
+}
+
 /* BARRA DE CABEÇALHO */
 header {
 	width:100%;
@@ -75,15 +99,16 @@ header {
 header ul {
 	position:absolute;
 	right:4%;
+
 }
 header li {
-	color:white;
+	color:rgb(255,255,255);
 	list-style:none;
 	display:inline-block;
 	font-family:'Josefin Sans', sans-serif;
 	font-size:1.3vw;
 	margin-right:1vw;
-	border-bottom: 0.15vw solid white;
+	border-bottom: 0.15vw solid rgb(255,255,255);
 	border-color:rgb(237,20,91)
 }
 header li p {
@@ -123,7 +148,7 @@ section#home span {
 	font-size:1.3vw;
 	margin-left:19%;
 	margin-top:-3%;
-	color:white;
+	color:rgb(255,255,255);
 	cursor:default;
 }
 section#home {
@@ -152,7 +177,7 @@ a#botao:hover {
 	position:absolute;
 	margin-left:13%;
 	margin-top:-2.4%;
-	border-color:rgb(237,20,91)
+	border-color:rgb(237,20,91);
 }
 
 /* PÁGINA SERVIÇOS */
@@ -162,7 +187,7 @@ header span {
 	font-size:1.3vw;
 	margin-left:19%;
 	margin-top:0.4%;
-	color:white;
+	color:rgb(255,255,255);
 	cursor:default;
 }
 #hr-serv {
@@ -187,6 +212,24 @@ section#empresa {
 	margin:auto;
 	margin-top:30%;
 }
+#missao{
+	width: 80%;
+    height: 200px;
+    margin: 0 auto;
+    background:rgba(237,20,91,0.7);
+}
+#visao{
+	width:80%;
+    height:200px;
+    margin:0 auto;
+    background:rgba(237,20,91,0.7);
+}
+#valores{
+	width:80%;
+    height:200px;
+    margin:0 auto;
+    background:rgba(237,20,91,0.7);
+}
 .empresa {
 	border: 1px solid rgb(237,20,91);
 	margin-left:1vw;
@@ -194,10 +237,228 @@ section#empresa {
 	height:auto;
 	float:left;
 }
+
+/*PÁGINA CONTATO*/
+section#contato{
+	margin-top:30vw;
+}
+input{  
+    width:35vw;
+    margin:auto;
+	text-align:center;
+	font-family: 'Karla', sans-serif;
+	font-size:1vw;
+	display:block;
+	padding:0.4vw;
+	border:1px solid rgba(0,0,0,0.6);
+	border-radius:0.4vw;
+	transition:background-color 0.2s;
+}
+textarea{
+	width:35vw;
+    margin:auto;
+	font-family: 'Karla', sans-serif;
+	font-size:1vw;
+	display:block;
+	padding:0.4vw;
+	border:1px solid rgba(0,0,0,0.6);
+	border-radius:0.4vw;
+	transition:background-color 0.2s;
+	resize:vertical;
+}
+input:hover, textarea:hover {
+	background-color:rgb(220,220,220);
+}
+input:focus, textarea:focus, select:focus {
+	outline:0;
+}
+label{
+	font-family: 'Karla', sans-serif;
+	margin-left:32vw;
+	display:inline-block;
+	margin-bottom:0.2vw;
+	font-size:1.3vw;
+	font-weight:bold;
+}
+.bt{
+	background-color:rgb(237,20,91);
+	border:2px solid white;
+	color:white;
+	font-weight:bold;
+	font-family: 'Work Sans', sans-serif;
+	font-size:1.2vw;
+	cursor:pointer;
+	width:8vw;
+	margin:auto;
+	border-radius:0;
+	transition: background-color 0.3s, color 0.3s;
+}
+.bt:hover{
+	background-color:rgb(255,255,255);
+	color:rgb(237,20,91);
+}
+a#botaocontato{
+	position:absolute;
+	margin-left:45%;
+	text-decoration:none;
+	color:rgb(237,20,91);
+	font-family: 'Work Sans', sans-serif;
+	font-size:1.1vw;
+	border: 1px solid rgb(237,20,91);
+	padding:1vw;
+	transition: background-color 0.3s, color 0.3s;
+}
+a#botaocontato:hover{
+	background-color: rgb(237,20,91);
+	color:rgb(255,255,255);
+}
+.titulo_contato {
+	color:black;
+	font-family: 'Karla', sans-serif;
+	font-size:2vw;
+	margin-left:32%;
+	padding-top:25%;
+	cursor:default;
+}
+.desc-contato {
+	font-family: 'Karla', sans-serif;
+	font-size:1.5vw;
+	padding-left:25%;
+	margin-top:-5%;
+	color:rgb(0,0,0);
+}
+#tel {
+	margin-left:15vw;
+	background-image: url("phone.png");
+	background-repeat:no-repeat;
+	background-size: 6.25vw 6.25vw;
+	background-position:6.5vw 0%;
+	width:20vw;
+	height:13vw;
+	display:block;
+	float:left;
+}
+#endereco {
+	background-image: url("local.png");
+	background-repeat:no-repeat;
+	background-size: 6.25vw 6.25vw;
+	background-position:6.5vw 0%;
+	width:20vw;
+	height:13vw;
+	float:left;
+	margin-left:5%;
+}
+#email {
+	background-image: url("email.png");
+	background-repeat:no-repeat;
+	background-size: 6.25vw 6.25vw;
+	background-position:6.5vw 0%;
+	width:20vw;
+	height:13vw;
+	float:left;
+	margin-left:5%;
+}
+#form {
+	position:absolute;
+	margin-top:22%;
+	background-color:rgb(237,20,91);
+	width:100%;
+}
+.mapa{
+	width:100%;
+    position:relative;
+	margin-top:52.5vw;
+	display:none;
+}
+
+/*PAGINA SUPORTE*/
+section#suporte {
+	margin: auto;
+	margin-top:23vw;
+}
+section#suporte a {
+	text-decoration:none;
+	color:rgb(237,20,91);
+}
+.pergunta {
+    border: 1px solid #ccc;
+    width:86.3vw;
+	font-family: 'Karla', sans-serif;
+	margin-left:6vw;
+	margin-top:1vw;
+}
+.pergunta input {
+	display:none;
+}
+.pergunta label {
+  display: inline-block;
+  font-weight: bold;
+  text-align:left;
+  font-family: 'Karla', sans-serif;
+  font-size:1.5vw;
+  width:100%;
+  margin:0;
+  padding:1.5vw;
+  color:rgb(180,180,180);
+  box-sizing:border-box;
+  transition:color 0.5s;
+  cursor:pointer;
+  background-image: url("plus.png");
+  background-size:3vw;
+  background-repeat:no-repeat;
+  background-position:99% 50%;
+  transition:background-image 0.3s, color 0.3s;
+}
+.resposta {
+	text-align:left;
+	font-family: 'Karla', sans-serif;
+	font-size:1.2vw;
+	padding: 1vw;
+	width:90%;
+	margin:auto;
+	text-align:justify;
+	color: #ccc;
+	box-sizing:border-box;
+	cursor:default;
+	display:none;
+}
+.pergunta input:checked ~ .resposta {
+  display: block;
+}
+.pergunta input:checked ~ label {
+	color:white;
+	background-image: url("minus.png");
+}
+.pergunta input:checked ~ label:hover {
+	background-image: url("minus-hover.png");
+}
+.pergunta label:hover {
+	background-image: url("plus-hover.png");
+	color:white;
+}
+#perguntas {
+	background-color:rgb(237,20,91);
+	margin-left:5vw;
+	display:inline-block;
+	padding:2vw;
+	color:white;
+	font-size:1.5vw;
+	font-family: 'Karla', sans-serif;
+	cursor:default;
+}
+hr#suporte {
+	background-color:rgb(237,20,91);
+	margin-left:5vw;
+	margin-top:0;
+	margin-right:5vw;
+	height:0.5vw;
+	border:0;
+}
 /* RODAPÉ */
 footer {
+	display:none;
 	width:100%;
-	height:13%;
+	height:13vh;
 	position:absolute;
 	top:100%;
 	background-color:black;
@@ -205,18 +466,19 @@ footer {
 	background-image:url("logo.png");
 	background-repeat:no-repeat;
 	background-size:4vw;
-	background-position:2% 1vh;
+	background-position:2% 2vh;
 }
 footer p {
 	color:rgb(160,160,160);
 	font-family: 'Karla', sans-serif;
-	text-align:left;
+	text-align:center;
 	display:inline-block;
-	margin-left:7vw;
-	margin-top:2.3%;
+	margin-left:38vw;
+	margin-top:2%;
 	font-size:1.2vw;
 	cursor:default;
 }
+
 /*@media (max-width:1000px){
 	hr, span {
 		display:none;

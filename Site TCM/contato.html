@@ -1,0 +1,62 @@
+<doctype html>
+<html>
+	<head>
+		<title>Contato - System Crown</title>
+		<link rel="stylesheet" href="style.css"/>
+		<link rel="shortcut icon" href="icon.png"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	</head>
+	<body id="contato">
+		<header>
+			<nav>
+				<a href="index.html"><img id="logo" src="logo.png" onMouseOver=this.src="logo-rosa.png" onMouseOut=this.src="logo.png" /></a>
+				<ul>
+					<li><p><a href="servicos.html">Serviços</a></p></li>
+					<li><p><a href="empresa.html">Empresa</a></p></li>
+					<li><p><a href="#">Contato</a></p></li>
+					<li><p><a href="suporte.html">Suporte</a><p></li>					
+				</ul>
+			</nav>
+			<div id="sinopse">
+				<hr id="hr-serv"/><span>CONTATO</span>
+				<p class="sinopse-grande">Entre em contato conosco</p>	
+				<a id="botaocontato" href= "https://api.whatsapp.com/send?phone=5511970186168&amp;text=Olá,%20quero%20fazer%20um%20orçamento" target="_blank">WHATSAPP</a>
+			</div>
+		</header>
+		<section id="contato">
+			<div id="tel">
+				<h1 class="titulo_contato">Telefone</h1>
+				<p class="desc-contato"> (11) 97018-6861 </p>
+			</div>	
+			<div id="endereco">
+				<h1 class="titulo_contato" style="margin-left:28%">Endereço</h1>
+				<p class="desc-contato" style="text-align:center; padding-left:0"> Rua Belchior de Azevedo, n°157- Vila Leopoldina,</br>São Paulo </p>
+			</div>	
+			<div id="email">
+				<h1 class="titulo_contato">E-mail</h1>
+				<p class="desc-contato" style="padding-left:0"> systemcrown.bg@gmail.com </p>
+			</div>
+			<div id="form">
+				<h1 class="titulo3">Preencha o formulário abaixo e aguarde retorno do nosso time. Em até 48h você terá uma resposta.</h1>
+				<form method="post" action="mailto:systemcrown.bg@gmail.com">			 
+						<label>NOME</label></br>
+						<input class="field" type="text" name="tnome" id="cnome" size="50" maxlength="50" placeholder="Insira o nome" /></br>
+						<label>TELEFONE</label></br>
+						<input class="field" type="phonenum" name="ttel"  id="ctel" placeholder="Ex. (11) 97018-6861" /></br>
+						<label>E-MAIL</label></br>
+						<input class="field" type="email" name="temail" id="cmail" size="50" maxlength="50" placeholder="Insira o endereço de email"/></br>
+						<label>ASSUNTO</label></br>
+						<input class="field" type="text" name="tass" id="cass" size="" maxlength="" placeholder="Do que se trata?"/></br>
+						<label>MENSAGEM</label></br>
+						<textarea class="field" name="tmen" id="cmen" cols="45" rows="10"></textarea></br>
+						<input type="submit" class="bt" value="Enviar"/>
+				</form>
+			</div>
+			<iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.3579036433694!2d-46.72665868502306!3d-23.519626384703574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef8eb9d8ffda3%3A0xfd99d1ab3a71bad6!2sR.+Belchior+de+Azevedo%2C+157+-+Vila+Leopoldina%2C+S%C3%A3o+Paulo+-+SP%2C+05089-030!5e0!3m2!1spt-BR!2sbr!4v1559949447089!5m2!1spt-BR!2sbr" width="600" height="450" frameborder="0" style="border:0"</iframe>
+		</section>
+		
+		<!--<footer>
+			<p> System Crown&copy 2019</br>Todos os direitos reservados.</p>
+		</footer>-->
+	</body>
+</html>
