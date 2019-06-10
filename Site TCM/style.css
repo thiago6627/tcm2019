@@ -66,6 +66,7 @@ body#servicos {
 	background-size: contain;
 	margin:0;
 	padding:0;
+	background-color:black;
 }
 body#empresa {
 	background-image:url("background3.jpg");
@@ -73,6 +74,7 @@ body#empresa {
 	background-size: contain;
 	margin:0;
 	padding:0;
+	background-color:black;
 }
 body#contato{
 	background-image:url("background4.png");
@@ -197,47 +199,135 @@ header span {
 	margin-left:13%;
 	border-color:rgb(237,20,91)
 }
-section#servicos {
-	margin: auto;
-	margin-top:35%;
-	width:100%;
-}
 div#sinopseServ {
 	position:absolute;
 	top:13vw;
 }
-
+section#servicos {
+	margin: auto;
+	margin-top:34vw;
+	width:83vw;
+	margin-bottom:34vw;
+}
+.servicos {
+	background-color:black;
+	width:25vw;
+	max-height:8.5vw;
+	transition: max-height 0.5s;
+	transition-timing-function: ease-out;
+	float:left;
+	margin-right:2vw;
+	border:1px solid rgb(237,20,91);
+	margin-top:2vw;
+	overflow:hidden;
+}
+.titulo-serv {
+	font-family: 'Work Sans', sans-serif;
+	font-size:2vw;
+	color:rgb(255,255,255);
+	text-align:center;
+	cursor:default;
+	transition:color 0.3s;
+}
+.desc-servico {
+	font-family: 'Karla', sans-serif;
+	font-size:1.3vw;
+	padding: 1% 10%;
+	text-align:center;
+	color:rgb(170,170,170);
+	opacity:0;
+	transition: opacity 0.6s;
+	transition-timing-function: ease;
+	cursor:default;
+}
+.coroa {
+	width:7vw;
+	position:absolute;
+	z-index:-1;
+	opacity:0.5;
+}
+.servicos:hover {
+	max-height:27vw;
+}
+.servicos:hover .desc-servico{
+	visibility:visible;
+	opacity:1;
+}
+.servicos:hover .titulo-serv {
+	color:rgb(237,20,91);
+}
+div#bloco1 {
+	float:left;
+	position:absolute;
+	margin-top:10.5vw;
+	z-index:-1;
+}
+#serv {
+	background-color:rgb(237,20,91);
+	display:inline-block;
+	padding:2vw;
+	color:white;
+	font-size:1.5vw;
+	font-family: 'Karla', sans-serif;
+	cursor:default;
+}
+#serv-hr {
+	background-color:rgb(237,20,91);
+	margin-top:0;
+	margin-right:2.4vw;
+	margin-bottom:3vw;
+	height:0.5vw;
+	border:0;
+}
 /* PÁGINA EMPRESA */
 section#empresa {
 	margin:auto;
 	margin-top:30%;
-}
-#missao{
-	width: 80%;
-    height: 200px;
-    margin: 0 auto;
-    background:rgba(237,20,91,0.7);
-}
-#visao{
-	width:80%;
-    height:200px;
-    margin:0 auto;
-    background:rgba(237,20,91,0.7);
-}
-#valores{
-	width:80%;
-    height:200px;
-    margin:0 auto;
-    background:rgba(237,20,91,0.7);
+	width:68%;
+	padding-bottom:28vw;
 }
 .empresa {
-	border: 1px solid rgb(237,20,91);
-	margin-left:1vw;
-	width:30vw;
-	height:auto;
+	background-color:black;
+	width:20vw;
+	max-height:8.5vw;
+	transition: max-height 0.6s;
+	transition-timing-function: ease-in;
 	float:left;
+	border:1px solid rgb(237,20,91);
+	margin-right:2vw;
+	margin-top:2vw;
+	overflow:hidden;
+	border-radius:4vw;
+}
+#missao {
+	background-image:url("mission.png");
+	background-size:3.5vw;
+	background-repeat:no-repeat;
+	background-position:8vw 1vw;
+}
+#visao {
+	background-image:url("vision.png");
+	background-size:3.8vw;
+	background-repeat:no-repeat;
+	background-position:8vw 1vw;
+}
+#valores {
+	background-image:url("values.png");
+	background-size:3.8vw;
+	background-repeat:no-repeat;
+	background-position:8vw 1vw;
 }
 
+.empresa:hover {
+	max-height:24vw;
+}
+.empresa:hover .desc-servico{
+	visibility:visible;
+	opacity:1;
+}
+.empresa:hover .titulo-serv {
+	color:rgb(237,20,91);
+}
 /*PÁGINA CONTATO*/
 section#contato{
 	margin-top:30vw;
