@@ -36,19 +36,20 @@
 				<h1 class="titulo_contato">E-mail</h1>
 				<p class="desc-contato" style="padding-left:0"> systemcrown.bg@gmail.com </p>
 			</div>
+			<div id="cont">CONTATE-NOS!</div>
 			<div id="form">
-				<h1 class="titulo3">Preencha o formulário abaixo e aguarde retorno do nosso time. Em até 48h você terá uma resposta.</h1>
+				<h1 class="titulo3">Preencha o formulário abaixo e aguarde o retorno do nosso time. Em até 48h você terá uma resposta.</h1>
 				<form method="post" action="mailto:systemcrown.bg@gmail.com">			 
 						<label>NOME</label></br>
-						<input class="field" type="text" name="tnome" id="cnome" size="50" maxlength="50" placeholder="Insira o nome" /></br>
+						<input class="field" type="text" name="tnome" id="cnome" size="50" maxlength="50" placeholder="Insira o nome" required /></br>
 						<label>TELEFONE</label></br>
-						<input class="field" type="phonenum" name="ttel"  id="ctel" placeholder="Ex. (11) 97018-6861" /></br>
+						<input class="field" type="phonenum" name="ttel"  id="ctel" placeholder="Ex. (11) 97018-6861" required /></br>
 						<label>E-MAIL</label></br>
-						<input class="field" type="email" name="temail" id="cmail" size="50" maxlength="50" placeholder="Insira o endereço de email"/></br>
+						<input class="field" type="email" name="temail" id="cmail" size="50" maxlength="50" placeholder="Insira o endereço de email" required /></br>
 						<label>ASSUNTO</label></br>
-						<input class="field" type="text" name="tass" id="cass" size="" maxlength="" placeholder="Do que se trata?"/></br>
+						<input class="field" type="text" name="tass" id="cass" size="" maxlength="" placeholder="Do que se trata?" required /></br>
 						<label>MENSAGEM</label></br>
-						<textarea class="field" name="tmen" id="cmen" cols="45" rows="10"></textarea></br>
+						<textarea class="field" name="tmen" id="cmen" cols="45" rows="10" required></textarea></br>
 						<input type="submit" class="bt" value="Enviar"/>
 				</form>
 			</div>

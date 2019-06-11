@@ -22,10 +22,11 @@
 }
 .titulo3 {
 	font-family: 'Work Sans', sans-serif;
-	font-size:2.5vw;
+	font-size:2.4vw;
 	color:rgba(0,0,0,0.7);
 	margin-left:10%;
 	margin-right:10%;
+	/*margin-top:15%;*/
 	text-align:center;
 }
 .sinopse {
@@ -77,11 +78,12 @@ body#empresa {
 	background-color:black;
 }
 body#contato{
-	background-image:url("background4.png");
+	background-image:url("background4.1.png");
 	background-repeat:no-repeat;
 	background-size:contain;
 	margin:0;
 	padding:0;
+	background-color:black;
 }
 body#suporte{
 	background-image:url("background5.png");
@@ -207,7 +209,7 @@ section#servicos {
 	margin: auto;
 	margin-top:34vw;
 	width:83vw;
-	margin-bottom:34vw;
+	margin-bottom:35vw;
 }
 .servicos {
 	background-color:black;
@@ -275,7 +277,7 @@ div#bloco1 {
 	background-color:rgb(237,20,91);
 	margin-top:0;
 	margin-right:2.4vw;
-	margin-bottom:3vw;
+	margin-bottom:2vw;
 	height:0.5vw;
 	border:0;
 }
@@ -283,14 +285,14 @@ div#bloco1 {
 section#empresa {
 	margin:auto;
 	margin-top:30%;
-	width:68%;
-	padding-bottom:28vw;
+	width:69%;
+	padding-bottom:25vw;
 }
 .empresa {
 	background-color:black;
 	width:20vw;
 	max-height:8.5vw;
-	transition: max-height 0.6s;
+	transition: max-height 0.4s;
 	transition-timing-function: ease-in;
 	float:left;
 	border:1px solid rgb(237,20,91);
@@ -298,6 +300,20 @@ section#empresa {
 	margin-top:2vw;
 	overflow:hidden;
 	border-radius:4vw;
+}
+#hist-emp {
+	color:rgb(170,170,170);
+	font-family: 'Karla', sans-serif;
+	font-size:1.5vw;
+	text-align:justify;
+	margin-left:2.6vw;
+	margin-right:6.3vw;
+	cursor:default;
+}
+#titulo-emp {
+	color:rgb(237,20,91);
+	font-family: 'Gotham Book', sans-serif;
+	cursor:default;
 }
 #missao {
 	background-image:url("mission.png");
@@ -330,7 +346,7 @@ section#empresa {
 }
 /*PÁGINA CONTATO*/
 section#contato{
-	margin-top:30vw;
+	margin-top:31vw;
 }
 input{  
     width:35vw;
@@ -403,7 +419,7 @@ a#botaocontato:hover{
 	color:rgb(255,255,255);
 }
 .titulo_contato {
-	color:black;
+	color:white;
 	font-family: 'Karla', sans-serif;
 	font-size:2vw;
 	margin-left:32%;
@@ -415,7 +431,7 @@ a#botaocontato:hover{
 	font-size:1.5vw;
 	padding-left:25%;
 	margin-top:-5%;
-	color:rgb(0,0,0);
+	color:white;
 }
 #tel {
 	margin-left:15vw;
@@ -449,15 +465,28 @@ a#botaocontato:hover{
 	margin-left:5%;
 }
 #form {
+	
 	position:absolute;
-	margin-top:22%;
+	margin-top:0%;
 	background-color:rgb(237,20,91);
+	/*background: linear-gradient(to top, rgb(235,21,92) 0%, rgb(235,21,92) 69%, rgb(0,0,0) 100%);*/
 	width:100%;
+}
+#cont {
+	background-color:rgb(237,20,91);
+	display:inline-block;
+	padding:2vw;
+	color:white;
+	font-size:1.5vw;
+	font-family: 'Karla', sans-serif;
+	cursor:default;
+	margin-top:10vw;
+	margin-left:82vw;
 }
 .mapa{
 	width:100%;
     position:relative;
-	margin-top:52.5vw;
+	margin-top:40vw;
 	display:none;
 }
 
@@ -465,6 +494,7 @@ a#botaocontato:hover{
 section#suporte {
 	margin: auto;
 	margin-top:23vw;
+	padding-bottom:3vw;
 }
 section#suporte a {
 	text-decoration:none;
@@ -541,6 +571,7 @@ hr#suporte {
 	margin-left:5vw;
 	margin-top:0;
 	margin-right:5vw;
+	margin-bottom:2vw;
 	height:0.5vw;
 	border:0;
 }
