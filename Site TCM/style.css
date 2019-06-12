@@ -12,6 +12,7 @@
 	color:rgb(255,255,255);
 	margin-left:13%;
 	margin-bottom:0;
+	cursor:default;
 }
 .titulo2 {
 	font-family: 'Work Sans', sans-serif;
@@ -28,6 +29,7 @@
 	margin-right:10%;
 	/*margin-top:15%;*/
 	text-align:center;
+	cursor:default;
 }
 .sinopse {
 	font-family: 'Karla', sans-serif;
@@ -36,6 +38,7 @@
 	text-align:justify;
 	color:rgb(255,255,255);
 	margin-right:13%;
+	cursor:default;
 }
 .sinopse-grande {
 	font-family: 'Gotham Book', sans-serif;
@@ -284,7 +287,7 @@ div#bloco1 {
 /* PÁGINA EMPRESA */
 section#empresa {
 	margin:auto;
-	margin-top:30%;
+	margin-top:29%;
 	width:69%;
 	padding-bottom:25vw;
 }
@@ -297,23 +300,9 @@ section#empresa {
 	float:left;
 	border:1px solid rgb(237,20,91);
 	margin-right:2vw;
-	margin-top:2vw;
+	margin-top:3vw;
 	overflow:hidden;
-	border-radius:4vw;
-}
-#hist-emp {
-	color:rgb(170,170,170);
-	font-family: 'Karla', sans-serif;
-	font-size:1.5vw;
-	text-align:justify;
-	margin-left:2.6vw;
-	margin-right:6.3vw;
-	cursor:default;
-}
-#titulo-emp {
-	color:rgb(237,20,91);
-	font-family: 'Gotham Book', sans-serif;
-	cursor:default;
+	border-radius:0.3vw;
 }
 #missao {
 	background-image:url("mission.png");
@@ -333,7 +322,32 @@ section#empresa {
 	background-repeat:no-repeat;
 	background-position:8vw 1vw;
 }
-
+#hist-emp {
+	color:rgb(170,170,170);
+	font-family: 'Karla', sans-serif;
+	font-size:1.5vw;
+	text-align:justify;
+	margin-left:2.5vw;
+	cursor:default;
+	margin-right:4.2vw;
+}
+#titulo-emp {
+	color:rgb(237,20,91);
+	font-family: 'Gotham Book', sans-serif;
+	cursor:default;
+	margin-top:2.6vw;
+}
+#historia {
+	position:relative;
+	width:65%;
+	float:right;
+	margin-top:24vw;
+}
+#mvv {
+	float:left;
+	position:absolute;
+	z-index:1;
+}
 .empresa:hover {
 	max-height:24vw;
 }
@@ -371,6 +385,8 @@ textarea{
 	border-radius:0.4vw;
 	transition:background-color 0.2s;
 	resize:vertical;
+	min-height:12vw;
+	max-height:20vw;
 }
 input:hover, textarea:hover {
 	background-color:rgb(220,220,220);
