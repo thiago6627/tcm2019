@@ -8,14 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Data.SqlClient;
 
 namespace Sistema_Clínica_de_Estética.Forms
 {
     public partial class CadFunc : Form
     {
+        SqlConnection crown = new SqlConnection("Data source = localhost; Initial Catalog = TcmClinica; user =sa; password=1234567");
+        SqlCommand comando = new SqlCommand();
+
         public CadFunc()
         {
             InitializeComponent();
+            comando.Connection = crown;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -35,23 +40,6 @@ namespace Sistema_Clínica_de_Estética.Forms
         {
             txt_nome.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             txt_nome.SelectionStart = txt_nome.Text.Length;
-        }
-        
-        private void txt_datan_Click(object sender, EventArgs e)
-        {
-            txt_datan.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            if (txt_datan.Text.Length <= 2)
-            {
-                txt_datan.SelectionStart = txt_datan.Text.Length;
-            }
-            else if (txt_datan.Text.Length >= 3 && txt_datan.Text.Length <= 4)
-            {
-                txt_datan.SelectionStart = txt_datan.Text.Length + 1;
-            }
-            else
-            {
-                txt_datan.SelectionStart = txt_datan.Text.Length + 2;
-            }
         }
 
         private void txt_cpf_Click(object sender, EventArgs e)
@@ -147,33 +135,23 @@ namespace Sistema_Clínica_de_Estética.Forms
 
         private void txt_pag_TextChanged(object sender, EventArgs e)
         {
-            if(txt_pag.Text.Length <= 3)
+            if (txt_pag.Text.Length <= 3)
             {
                 txt_pag.Text = "R$ ";
                 txt_pag.SelectionStart = 3;
             }
         }
 
-        private void dataa_Click(object sender, EventArgs e)
-        {
-            dataa.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            if (dataa.Text.Length >= 3 && dataa.Text.Length <= 4)
-            {
-                dataa.SelectionStart = dataa.Text.Length + 1;
-            }
-            else if (dataa.Text.Length >= 5)
-            {
-                dataa.SelectionStart = dataa.Text.Length + 2;
-            }
-            else
-            {
-                dataa.SelectionStart = dataa.Text.Length;
-            }
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            if(txt_nome.Text=="")
+            string data = txt_datan.Text;
+
+            string dia = data.Substring(0, 2);
+            string mes = data.Substring(3, 2);
+            string ano = data.Substring(5, 5).Replace("/","");
+            int anos = DateTime.Now.Year;
+
+            if (txt_nome.Text == "")
             {
                 MessageBox.Show("Preencha todos os campos!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txt_nome.Focus();
@@ -182,6 +160,11 @@ namespace Sistema_Clínica_de_Estética.Forms
             {
                 MessageBox.Show("Preencha a data de nascimento do funcionário!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txt_datan.Focus();
+            }
+            else if (int.Parse(dia) > 31 || int.Parse(mes) > 12 || (int.Parse(ano)> anos-18 || int.Parse(ano)<anos-60))
+            {
+                MessageBox.Show("Insira uma data válida");
+                MessageBox.Show(dia + "\n" + mes + "\n" + ano);
             }
             else if (txt_cpf.MaskFull == false)
             {
@@ -217,7 +200,48 @@ namespace Sistema_Clínica_de_Estética.Forms
                 MessageBox.Show("Preencha a data de admissão do funcionário!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 dataa.Focus();
             }
-            else { }
+            else
+            {
+                string s;
+
+                if (radioButton1.Checked == true)
+                {
+                    s = "Masculino";
+                }
+                else
+                {
+                    s = "Feminino";
+                }
+
+                crown.Open();
+                comando.CommandText = " INSERT INTO tbl_funcionario (nmfunc,cargo,salario,enderecofunc,emailfunc,cpffunc,rgfunc,dataadim,telfunc,celfunc,datanasc,sexo) values ('" + txt_nome.Text + "','" + comboBox1.SelectedItem + "','" + txt_pag.Text + "','" + txt_end.Text + "','" + txt_email.Text + "','" + txt_cpf.Text + "','" + txt_rg.Text + "','" + dataa.Text + "','" + txt_tel.Text + "','" + txt_cel.Text + "','" + txt_datan.Text + "','" + s + "')   ";
+                comando.ExecuteNonQuery();
+                crown.Close();
+                MessageBox.Show("Funcionário cadastrado com sucesso! ");
+            }
+        }
+
+        private void txt_end_Click(object sender, EventArgs e)
+        {
+            txt_end.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            txt_end.SelectionStart = txt_end.Text.Length;
+        }
+
+        private void txt_datan_Click(object sender, EventArgs e)
+        {
+            txt_datan.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            if(txt_datan.Text.Length >= 3 && txt_datan.Text.Length <= 4)
+            {
+                txt_datan.SelectionStart = txt_datan.Text.Length + 1;
+            }
+            else if (txt_datan.Text.Length >= 5)
+            {
+                txt_datan.SelectionStart = txt_datan.Text.Length + 2;
+            }
+            else
+            {
+                txt_datan.SelectionStart = txt_datan.Text.Length;
+            }
         }
     }
 }

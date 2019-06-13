@@ -27,7 +27,6 @@ namespace Sistema_Clínica_de_Estética
         {
             this.Close();
             Thread nt = new Thread(novoform);
-            nt.SetApartmentState(ApartmentState.STA);
             nt.Start();
         }
 
@@ -46,6 +45,18 @@ namespace Sistema_Clínica_de_Estética
         private void formFuncionario()
         {
             Application.Run(new Forms.CadFunc());
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Thread cc = new Thread(formConsCli);
+            cc.Start();
+        }
+
+        private void formConsCli()
+        {
+            Application.Run(new Forms.ConsCli());
         }
     }
 }

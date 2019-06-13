@@ -58,6 +58,18 @@
     <Compile Include="Forms\CadFunc.Designer.cs">
       <DependentUpon>CadFunc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ConsCli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ConsCli.Designer.cs">
+      <DependentUpon>ConsCli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Estoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Estoque.Designer.cs">
+      <DependentUpon>Estoque.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TelaLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +89,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CadFunc.resx">
       <DependentUpon>CadFunc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ConsCli.resx">
+      <DependentUpon>ConsCli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Estoque.resx">
+      <DependentUpon>Estoque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>

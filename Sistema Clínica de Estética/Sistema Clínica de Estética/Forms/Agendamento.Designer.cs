@@ -90,11 +90,28 @@
             this.label16 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.maskedTextBox9 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox10 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox11 = new System.Windows.Forms.MaskedTextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -124,7 +141,7 @@
             this.panel2.Controls.Add(this.button2);
             this.panel2.Location = new System.Drawing.Point(22, 75);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(303, 26);
+            this.panel2.Size = new System.Drawing.Size(303, 29);
             this.panel2.TabIndex = 8;
             this.panel2.Visible = false;
             // 
@@ -189,7 +206,7 @@
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(22, 75);
+            this.panel3.Location = new System.Drawing.Point(730, 179);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(303, 206);
             this.panel3.TabIndex = 15;
@@ -313,7 +330,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(673, 51);
+            this.label8.Location = new System.Drawing.Point(383, 118);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(35, 17);
             this.label8.TabIndex = 19;
@@ -323,7 +340,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(817, 50);
+            this.label9.Location = new System.Drawing.Point(527, 117);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 17);
             this.label9.TabIndex = 20;
@@ -350,7 +367,7 @@
             this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(714, 47);
+            this.dateTimePicker1.Location = new System.Drawing.Point(424, 114);
             this.dateTimePicker1.MinDate = new System.DateTime(2019, 5, 30, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(87, 25);
@@ -385,7 +402,7 @@
             "18:00",
             "18:30",
             "19:00"});
-            this.comboBox2.Location = new System.Drawing.Point(876, 47);
+            this.comboBox2.Location = new System.Drawing.Point(586, 114);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(77, 25);
             this.comboBox2.Sorted = true;
@@ -444,7 +461,7 @@
             // button1
             // 
             this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(858, 116);
+            this.button1.Location = new System.Drawing.Point(893, 118);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 23);
             this.button1.TabIndex = 13;
@@ -514,7 +531,7 @@
             this.panel5.Controls.Add(this.radioButton3);
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(302, 238);
+            this.panel5.Size = new System.Drawing.Size(424, 238);
             this.panel5.TabIndex = 30;
             this.panel5.Visible = false;
             // 
@@ -806,14 +823,191 @@
             this.button6.Visible = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.White;
+            this.panel7.Controls.Add(this.panel12);
+            this.panel7.Controls.Add(this.panel11);
+            this.panel7.Controls.Add(this.panel10);
+            this.panel7.Controls.Add(this.panel9);
+            this.panel7.Controls.Add(this.panel8);
+            this.panel7.Controls.Add(this.textBox6);
+            this.panel7.Controls.Add(this.maskedTextBox9);
+            this.panel7.Controls.Add(this.maskedTextBox10);
+            this.panel7.Controls.Add(this.maskedTextBox11);
+            this.panel7.Controls.Add(this.label24);
+            this.panel7.Controls.Add(this.label25);
+            this.panel7.Controls.Add(this.textBox5);
+            this.panel7.Controls.Add(this.label26);
+            this.panel7.Controls.Add(this.label27);
+            this.panel7.Controls.Add(this.label28);
+            this.panel7.Location = new System.Drawing.Point(22, 117);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(303, 174);
+            this.panel7.TabIndex = 21;
+            this.panel7.Visible = false;
+            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
+            // 
+            // maskedTextBox9
+            // 
+            this.maskedTextBox9.BackColor = System.Drawing.Color.White;
+            this.maskedTextBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.maskedTextBox9.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBox9.Location = new System.Drawing.Point(6, 23);
+            this.maskedTextBox9.Mask = ">LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL" +
+    "LLLLLLLLLLLLLLLLLLLL";
+            this.maskedTextBox9.Name = "maskedTextBox9";
+            this.maskedTextBox9.PromptChar = ' ';
+            this.maskedTextBox9.ReadOnly = true;
+            this.maskedTextBox9.Size = new System.Drawing.Size(292, 18);
+            this.maskedTextBox9.TabIndex = 2;
+            // 
+            // maskedTextBox10
+            // 
+            this.maskedTextBox10.BackColor = System.Drawing.Color.White;
+            this.maskedTextBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.maskedTextBox10.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBox10.Location = new System.Drawing.Point(6, 67);
+            this.maskedTextBox10.Mask = "(00) 00000-0000";
+            this.maskedTextBox10.Name = "maskedTextBox10";
+            this.maskedTextBox10.ReadOnly = true;
+            this.maskedTextBox10.Size = new System.Drawing.Size(156, 18);
+            this.maskedTextBox10.TabIndex = 3;
+            // 
+            // maskedTextBox11
+            // 
+            this.maskedTextBox11.BackColor = System.Drawing.Color.White;
+            this.maskedTextBox11.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.maskedTextBox11.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBox11.Location = new System.Drawing.Point(168, 67);
+            this.maskedTextBox11.Mask = "000,000,000-00";
+            this.maskedTextBox11.Name = "maskedTextBox11";
+            this.maskedTextBox11.ReadOnly = true;
+            this.maskedTextBox11.Size = new System.Drawing.Size(130, 18);
+            this.maskedTextBox11.TabIndex = 4;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(7, 134);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(36, 17);
+            this.label24.TabIndex = 20;
+            this.label24.Text = "Sexo";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(165, 47);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(29, 17);
+            this.label25.TabIndex = 16;
+            this.label25.Text = "CPF";
+            // 
+            // textBox5
+            // 
+            this.textBox5.BackColor = System.Drawing.Color.White;
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox5.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(6, 110);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
+            this.textBox5.Size = new System.Drawing.Size(292, 18);
+            this.textBox5.TabIndex = 5;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(6, 90);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(44, 17);
+            this.label26.TabIndex = 13;
+            this.label26.Text = "E-mail";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(6, 47);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(57, 17);
+            this.label27.TabIndex = 11;
+            this.label27.Text = "Telefone";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(3, 4);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(44, 17);
+            this.label28.TabIndex = 9;
+            this.label28.Text = "Nome";
+            // 
+            // textBox6
+            // 
+            this.textBox6.BackColor = System.Drawing.Color.White;
+            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox6.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(10, 152);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
+            this.textBox6.Size = new System.Drawing.Size(69, 18);
+            this.textBox6.TabIndex = 34;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.Black;
+            this.panel8.Location = new System.Drawing.Point(6, 41);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(292, 1);
+            this.panel8.TabIndex = 34;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.Black;
+            this.panel9.Location = new System.Drawing.Point(6, 87);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(156, 1);
+            this.panel9.TabIndex = 35;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.Black;
+            this.panel10.Location = new System.Drawing.Point(168, 87);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(130, 1);
+            this.panel10.TabIndex = 36;
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.Black;
+            this.panel11.Location = new System.Drawing.Point(6, 129);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(292, 1);
+            this.panel11.TabIndex = 37;
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.Black;
+            this.panel12.Location = new System.Drawing.Point(8, 170);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(70, 1);
+            this.panel12.TabIndex = 38;
+            // 
             // txt__recebido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1000, 500);
+            this.Controls.Add(this.panel7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.label11);
@@ -827,7 +1021,6 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "txt__recebido";
@@ -844,6 +1037,8 @@
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -904,12 +1099,28 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.TextBox txt_valor;
         private System.Windows.Forms.TextBox txt_recebido;
         private System.Windows.Forms.MaskedTextBox maskedTextBox6;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.MaskedTextBox maskedTextBox7;
         private System.Windows.Forms.MaskedTextBox maskedTextBox8;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox9;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox10;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox11;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel panel11;
     }
 }

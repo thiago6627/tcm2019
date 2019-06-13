@@ -359,7 +359,7 @@ namespace Sistema_Clínica_de_Estética.Forms
                     val = textBox2.Text.Replace("R$ ", "").Replace(',', '.');
                 }
                 else { }
-                comando.CommandText = "INSERT INTO tbl_servico (nm_serv,tipo_serv,vl_serv) values ('"+comboBox4.SelectedItem+"','"+comboBox1.SelectedItem+"','"+ val + "')";
+                comando.CommandText = "INSERT INTO tbl_servico (nmserv,tiposerv,vlserv) values ('"+comboBox4.SelectedItem+"','"+comboBox1.SelectedItem+"','"+ val + "')";
                 comando.ExecuteNonQuery();
                 crown.Close();
                 MessageBox.Show("Sessão agendada com sucesso!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -401,7 +401,20 @@ namespace Sistema_Clínica_de_Estética.Forms
                 comboBox4.Enabled = true;
                 dateTimePicker1.Enabled = true;
                 button1.Enabled = true;
+                panel7.Visible = true;
 
+                if (crown.State == ConnectionState.Closed)
+                    crown.Open();
+                
+                comando.CommandText = "SELECT * FROM tbl_cliente where cpfcli= '" + maskedTextBox1.Text + "' ";
+                SqlDataReader dr = comando.ExecuteReader();
+                
+                if (dr.Read())
+                {
+                    maskedTextBox9.Text = dr["nmcli"].ToString();
+
+                }
+                
             }
         }
 
@@ -644,6 +657,11 @@ namespace Sistema_Clínica_de_Estética.Forms
         {
             maskedTextBox8.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             maskedTextBox8.SelectionStart = maskedTextBox8.Text.Length;
+        }
+
+        private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
