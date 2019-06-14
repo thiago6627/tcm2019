@@ -22,11 +22,10 @@ namespace Sistema_Clínica_de_Estética.Forms
             InitializeComponent();
             comando.Connection = crown;
         }
-        Thread nt;
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
-            nt = new Thread(novoform);
+            Thread nt = new Thread(novoform);
             nt.Start();
         }
 

@@ -58,5 +58,17 @@ namespace Sistema_Clínica_de_Estética
         {
             Application.Run(new Forms.ConsCli());
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Thread session = new Thread(formSessoes);
+            session.Start();
+        }
+
+        private void formSessoes()
+        {
+            Application.Run(new Forms.Sessões());
+        }
     }
 }

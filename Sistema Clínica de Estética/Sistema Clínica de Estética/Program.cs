@@ -16,7 +16,7 @@ namespace Sistema_Clínica_de_Estética
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Forms.ConsCli());
+            Application.Run(new Form1());
         }
     }
 }
