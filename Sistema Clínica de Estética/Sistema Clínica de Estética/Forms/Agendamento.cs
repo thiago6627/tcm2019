@@ -14,7 +14,9 @@ namespace Sistema_Clínica_de_Estética.Forms
 {
     public partial class txt__recebido : Form
     {
-        SqlConnection crown = new SqlConnection("Data source = localhost; Initial Catalog = TcmClinica; user =sa; password=1234567");
+
+        /*SqlConnection crown = new SqlConnection("Data source = localhost; Initial Catalog = TcmClinica; user =sa; password=1234567");*/
+        SqlConnection crown = new SqlConnection("Data source = DESKTOP-44K49R1\\SQLEXPRESS; Initial Catalog = TcmClinica; user =sa; password=1234567");
         SqlCommand comando = new SqlCommand();
 
         public txt__recebido()
@@ -38,13 +40,11 @@ namespace Sistema_Clínica_de_Estética.Forms
         {
             if (comboBox1.SelectedIndex == -1)
             {
-                label11.Visible = false;
-                comboBox4.Visible = false;
+                comboBox4.Enabled = false;
             }
             else
             {
-                label11.Visible = true;
-                comboBox4.Visible = true;
+                comboBox4.Enabled = true;
             }
             if (comboBox1.SelectedIndex == 0)
             {
@@ -53,7 +53,6 @@ namespace Sistema_Clínica_de_Estética.Forms
                 comboBox4.Items.Add("Lipo Carbox");
                 comboBox4.Items.Add("Heccus");
                 comboBox4.Items.Add("Plataforma Vibratória");
-                comboBox4.Items.Add("Spectra");
                 comboBox4.Items.Add("Massagem");
                 comboBox4.Items.Add("Lipomassagem");
                 comboBox4.Items.Add("Drenagem Linfática");
@@ -109,6 +108,8 @@ namespace Sistema_Clínica_de_Estética.Forms
             {
                 panel2.Visible = false;
                 panel3.Visible = true;
+                Point cliente = new Point(522, 258);
+                this.panel3.Location = cliente;
                 maskedTextBox6.Focus();
             }
         }
@@ -207,6 +208,8 @@ namespace Sistema_Clínica_de_Estética.Forms
             {
                 panel1.Visible = true;
                 panel5.Visible = false;
+                Point pagamento = new Point(20, 54);
+                this.panel1.Location = pagamento;
                 txt_valor.Focus();
             }
         }
@@ -264,7 +267,7 @@ namespace Sistema_Clínica_de_Estética.Forms
         private void maskedTextBox3_Click(object sender, EventArgs e)
         {
             maskedTextBox3.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            if (maskedTextBox3.Text.Length >= 5 && maskedTextBox3.Text.Length <=8)
+            if (maskedTextBox3.Text.Length >= 5 && maskedTextBox3.Text.Length <= 8)
             {
                 maskedTextBox3.SelectionStart = maskedTextBox3.Text.Length + 1;
             }
@@ -330,43 +333,119 @@ namespace Sistema_Clínica_de_Estética.Forms
             }
             else
             {
-                crown.Open();
-                string s;
-
-                if (comboBox3.SelectedIndex==1)
+                try
                 {
-                    if (radioButton4.Checked == true)
+                    DateTime dataHoje = DateTime.Today;
+                    string cod = "a";
+                    string f;
+                    string s;
+
+                    crown.Open();
+                    comando.CommandText = "SELECT codserv FROM tbl_servico where nmserv= '" + comboBox4.Text + "' ";
+                    SqlDataReader dr = comando.ExecuteReader();
+
+                    if (dr.Read())
                     {
-                        s = "Masculino";
+                        cod = dr["codserv"].ToString();
+                        crown.Close();
+                    }
+
+                    if (radioButton1.Checked == true)
+                    {
+                        f = "Dinheiro";
+
                     }
                     else
                     {
-                        s = "Feminino";
+                        f = "Cartão";
                     }
-                   
-                    comando.CommandText = "INSERT INTO tbl_cliente (nmcli,emailcli,cpfcli,ntel,sexo) values ('" + maskedTextBox6.Text + "','" + textBox4.Text + "','" + maskedTextBox1.Text + "','" + maskedTextBox2.Text + "','"+ s+"')";
+
+                    if (comboBox3.SelectedIndex == 1)
+                    {
+                        if (radioButton4.Checked == true)
+                        {
+                            s = "Masculino";
+                        }
+                        else
+                        {
+                            s = "Feminino";
+                        }
+                        crown.Open();
+                        comando.CommandText = "INSERT INTO tbl_cliente (nmcli,emailcli,cpfcli,ntel,sexo) values ('" + maskedTextBox6.Text + "','" + textBox4.Text + "','" + maskedTextBox1.Text + "','" + maskedTextBox2.Text + "','" + s + "')";
+                        comando.ExecuteNonQuery();
+                        crown.Close();
+
+                        crown.Open();
+                        comando.CommandText = "INSERT INTO tbl_agendamento (data,hora,cpfcli,codserv) values ('" + dateTimePicker1.Value + "','" + comboBox2.SelectedItem + "','" + maskedTextBox1.Text + "','" + cod + "')";
+                        comando.ExecuteNonQuery();
+                        crown.Close();
+
+                        if (radioButton1.Checked == true)
+                        {
+                            crown.Open();
+                            comando.CommandText = "INSERT INTO tbl_pagamento (vlpag,formapag,datapag,cpfcli) values ('" + txt_valor.Text + "','" + f + "','" + dataHoje + "','" + maskedTextBox1.Text + "')";
+                            comando.ExecuteNonQuery();
+                            crown.Close();
+                        }
+                        else
+                        {
+                            crown.Open();
+                            comando.CommandText = "INSERT INTO tbl_pagamento (vlpag,formapag,datapag,cpfcli) values ('" + textBox2.Text + "','" + f + "','" + dataHoje + "','" + maskedTextBox1.Text + "')";
+                            comando.ExecuteNonQuery();
+                            crown.Close();
+                        }
+
+                    }
+
+                    else
+                    {
+                        crown.Open();
+                        comando.CommandText = "INSERT INTO tbl_agendamento (data,hora,cpfcli,codserv) values ('" + dateTimePicker1.Value + "','" + comboBox2.SelectedItem + "','" + maskedTextBox5.Text + "', '" + cod + "')";
+                        comando.ExecuteNonQuery();
+                        crown.Close();
+
+                        if (radioButton1.Checked == true)
+                        {
+                            crown.Open();
+                            comando.CommandText = "INSERT INTO tbl_pagamento (vlpag,formapag,datapag,cpfcli) values ('" + txt_valor.Text + "','" + f + "','" + dataHoje + "','" + maskedTextBox5.Text + "')";
+                            comando.ExecuteNonQuery();
+                            crown.Close();
+                        }
+                        else
+                        {
+                            crown.Open();
+                            comando.CommandText = "INSERT INTO tbl_pagamento (vlpag,formapag,datapag,cpfcli) values ('" + textBox2.Text + "','" + f + "','" + dataHoje + "','" + maskedTextBox5.Text + "')";
+                            comando.ExecuteNonQuery();
+                            crown.Close();
+                        }
+
+
+                    }
+
+                    if (radioButton1.Checked == true && radioButton2.Checked == false)
+                    {
+                        val = txt_valor.Text.Replace("R$ ", "").Replace(',', '.');
+                    }
+                    else if (radioButton2.Checked == true && radioButton1.Checked == false)
+                    {
+                        val = textBox2.Text.Replace("R$ ", "").Replace(',', '.');
+                    }
+
+                    crown.Open();
+                    comando.CommandText = "UPDATE tbl_servico set vlserv = '" + val + "' where nmserv='" + comboBox4.Text + "'";
                     comando.ExecuteNonQuery();
-                }
-                comando.CommandText = "INSERT INTO tbl_agendamento (data,hora) values ('" + dateTimePicker1.Value + "','" + comboBox2.SelectedItem + "')";
-                
-                if (radioButton1.Checked == true && radioButton2.Checked == false)
+                    crown.Close();
+
+                    MessageBox.Show("Sessão agendada com sucesso!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               }
+               catch
                 {
-                    val = txt_valor.Text.Replace("R$ ", "").Replace(',', '.');
+                    //MessageBox.Show("Falha de conexão com o banco!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else if (radioButton2.Checked == true && radioButton1.Checked == false)
-                {
-                    val = textBox2.Text.Replace("R$ ", "").Replace(',', '.');
-                }
-                else { }
-                comando.CommandText = "INSERT INTO tbl_servico (nmserv,tiposerv,vlserv) values ('"+comboBox4.SelectedItem+"','"+comboBox1.SelectedItem+"','"+ val + "')";
-                comando.ExecuteNonQuery();
-                crown.Close();
-                MessageBox.Show("Sessão agendada com sucesso!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-        
 
-    private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             if (maskedTextBox5.MaskFull == false)
             {
@@ -395,25 +474,40 @@ namespace Sistema_Clínica_de_Estética.Forms
             }
             else
             {
-                comboBox1.Enabled = true;
-                comboBox2.Enabled = true;
-                comboBox4.Enabled = true;
-                dateTimePicker1.Enabled = true;
-                button1.Enabled = true;
-                panel7.Visible = true;
 
-                if (crown.State == ConnectionState.Closed)
-                    crown.Open();
-                
-                comando.CommandText = "SELECT * FROM tbl_cliente where cpfcli= '" + maskedTextBox1.Text + "' ";
-                SqlDataReader dr = comando.ExecuteReader();
-                
-                if (dr.Read())
+
+                try
                 {
-                    maskedTextBox9.Text = dr["nmcli"].ToString();
+                    crown.Open();
+                    comando.CommandText = "SELECT * FROM tbl_cliente where cpfcli= '" + maskedTextBox5.Text + "' ";
+                    SqlDataReader dr = comando.ExecuteReader();
 
+                    comboBox1.Enabled = true;
+                    comboBox2.Enabled = true;
+                    comboBox4.Enabled = true;
+                    dateTimePicker1.Enabled = true;
+                    button1.Enabled = true;
+                    panel7.Visible = true;
+
+                    if (dr.Read())
+                    {
+                        maskedTextBox9.Text = dr["nmcli"].ToString();
+                        textBox5.Text = dr["emailcli"].ToString();
+                        textBox6.Text = dr["sexo"].ToString();
+                        maskedTextBox10.Text = dr["ntel"].ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cliente não encontrado!", "Falha na busca", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        maskedTextBox5.Focus();
+                    }
+                    crown.Close();
                 }
-                
+                catch
+                {
+                    MessageBox.Show("Falha na conexão com o banco!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
         }
 
@@ -623,7 +717,7 @@ namespace Sistema_Clínica_de_Estética.Forms
         {
             maskedTextBox7.SelectionStart = maskedTextBox7.Text.Length;
         }
-        
+
         private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
         {
             decimal valorParcelado;
@@ -658,9 +752,6 @@ namespace Sistema_Clínica_de_Estética.Forms
             maskedTextBox8.SelectionStart = maskedTextBox8.Text.Length;
         }
 
-        private void panel7_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+    
     }
 }

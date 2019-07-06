@@ -27,6 +27,7 @@ namespace Sistema_Clínica_de_Estética
         {
             this.Close();
             Thread nt = new Thread(novoform);
+            nt.SetApartmentState(ApartmentState.STA);
             nt.Start();
         }
 
@@ -39,6 +40,7 @@ namespace Sistema_Clínica_de_Estética
         {
             this.Close();
             Thread ff = new Thread(formFuncionario);
+            ff.SetApartmentState(ApartmentState.STA);
             ff.Start();
         }
 
@@ -51,6 +53,7 @@ namespace Sistema_Clínica_de_Estética
         {
             this.Close();
             Thread cc = new Thread(formConsCli);
+            cc.SetApartmentState(ApartmentState.STA);
             cc.Start();
         }
 
@@ -63,12 +66,52 @@ namespace Sistema_Clínica_de_Estética
         {
             this.Close();
             Thread session = new Thread(formSessoes);
+            session.SetApartmentState(ApartmentState.STA);
             session.Start();
         }
 
         private void formSessoes()
         {
             Application.Run(new Forms.Sessões());
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Thread stock = new Thread(formEstoque);
+            stock.SetApartmentState(ApartmentState.STA);
+            stock.Start();
+        }
+
+        private void formEstoque()
+        {
+            Application.Run(new Forms.Estoque());
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Thread regpag = new Thread(formRegPag);
+            regpag.SetApartmentState(ApartmentState.STA);
+            regpag.Start();
+        }
+
+        private void formRegPag()
+        {
+            Application.Run(new Forms.RegPag());
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Thread cons_func = new Thread(formConsFunc);
+            cons_func.SetApartmentState(ApartmentState.STA);
+            cons_func.Start();
+        }
+
+        private void formConsFunc()
+        {
+            Application.Run(new Forms.ConsFunc());
         }
     }
 }

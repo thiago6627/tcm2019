@@ -14,7 +14,8 @@ namespace Sistema_Clínica_de_Estética.Forms
 {
     public partial class CadFunc : Form
     {
-        SqlConnection crown = new SqlConnection("Data source = localhost; Initial Catalog = TcmClinica; user =sa; password=1234567");
+        //SqlConnection crown = new SqlConnection("Data source = localhost; Initial Catalog = TcmClinica; user =sa; password=1234567");
+        SqlConnection crown = new SqlConnection("Data source = DESKTOP-44K49R1\\SQLEXPRESS; Initial Catalog = TcmClinica; user =sa; password=1234567");
         SqlCommand comando = new SqlCommand();
 
         public CadFunc()
@@ -148,7 +149,12 @@ namespace Sistema_Clínica_de_Estética.Forms
 
             string dia = data.Substring(0, 2);
             string mes = data.Substring(3, 2);
-            string ano = data.Substring(5, 5).Replace("/","");
+            string ano = data.Substring(6, 4);
+
+            string data2 = dataa.Text;
+            string dia2 = data2.Substring(0, 2);
+            string mes2 = data2.Substring(3, 2);
+            string ano2 = data2.Substring(6, 4);
             int anos = DateTime.Now.Year;
 
             if (txt_nome.Text == "")
@@ -163,8 +169,13 @@ namespace Sistema_Clínica_de_Estética.Forms
             }
             else if (int.Parse(dia) > 31 || int.Parse(mes) > 12 || (int.Parse(ano)> anos-18 || int.Parse(ano)<anos-60))
             {
-                MessageBox.Show("Insira uma data válida");
-                MessageBox.Show(dia + "\n" + mes + "\n" + ano);
+                MessageBox.Show("Insira uma data de nascimento válida");
+                txt_datan.Focus();
+            }
+            else if (int.Parse(dia2) > 31 || int.Parse(mes2) > 12 || int.Parse(ano2) > anos)
+            {
+                MessageBox.Show("Insira uma data de admissão válida");
+                dataa.Focus();
             }
             else if (txt_cpf.MaskFull == false)
             {
@@ -241,6 +252,23 @@ namespace Sistema_Clínica_de_Estética.Forms
             else
             {
                 txt_datan.SelectionStart = txt_datan.Text.Length;
+            }
+        }
+
+        private void dataa_Click(object sender, EventArgs e)
+        {
+            dataa.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            if (dataa.Text.Length >= 3 && dataa.Text.Length <= 4)
+            {
+                dataa.SelectionStart = dataa.Text.Length + 1;
+            }
+            else if (dataa.Text.Length >= 5)
+            {
+                dataa.SelectionStart = dataa.Text.Length + 2;
+            }
+            else
+            {
+                dataa.SelectionStart = dataa.Text.Length;
             }
         }
     }
